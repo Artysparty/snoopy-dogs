@@ -3,10 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Мобильное меню
     const menuBtn = document.querySelector('.menu-btn');
     const nav = document.querySelector('nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
     
     if (menuBtn) {
         menuBtn.addEventListener('click', function() {
             nav.classList.toggle('active');
+            this.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            // Блокируем прокрутку страницы при открытом меню
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Закрытие меню при клике на затемнение
+        menuOverlay.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuBtn.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
         });
     }
     
@@ -218,8 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     `
                 }, {
                     // Опции метки
-                    preset: 'islands#greenDogIcon', // Иконка собаки зеленого цвета
-                    iconColor: '#a2c29f' // Используем жестко заданный цвет вместо CSS переменной
+                    preset: 'islands#redDogIcon', // Иконка собаки красного цвета
+                    iconColor: '#e85a4f' // Обновляем цвет иконки на коралловый/терракотовый
                 });
                 
                 // Добавляем метку на карту
