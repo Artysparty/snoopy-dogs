@@ -21,49 +21,80 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initMobileMenu() {
     const menuBtn = document.querySelector('.menu-btn');
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.main-nav');
     const menuOverlay = document.querySelector('.menu-overlay');
     
-    if (menuBtn) {
-        menuBtn.addEventListener('click', function() {
-            nav.classList.toggle('active');
+    if (menuBtn && nav && menuOverlay) {
+        // Добавляем обработчик для анимации кнопки меню
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Предотвращаем всплытие события
             this.classList.toggle('active');
+            nav.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             document.body.classList.toggle('menu-open');
         });
         
+        // Закрываем меню при клике на оверлей
         menuOverlay.addEventListener('click', function() {
-            nav.classList.remove('active');
-            menuBtn.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
+            closeMenu();
         });
-    }
-    
-    // Закрытие мобильного меню при клике на ссылку
-    const menuLinks = document.querySelectorAll('nav a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                menuBtn.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
+        
+        // Закрываем меню при клике вне навигации
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('active') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                closeMenu();
             }
         });
-    });
+        
+        // Закрытие мобильного меню при клике на ссылку
+        const menuLinks = nav.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMenu();
+            });
+        });
+    }
+}
+
+/**
+ * Закрытие мобильного меню
+ */
+function closeMenu() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.main-nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    
+    if (menuBtn && nav && menuOverlay) {
+        menuBtn.classList.remove('active');
+        nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
 }
 
 /**
  * Выделение активного пункта меню
  */
 function highlightActiveMenuItem() {
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+    
+    // Удаляем класс active у всех ссылок
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Определяем текущую страницу
+    let currentPage = currentPath.split('/').pop() || 'index.html';
     
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (currentPage === linkPage || (currentPage === '' && linkPage === 'index.html')) {
+        const href = link.getAttribute('href');
+        
+        // Для главной страницы
+        if ((currentPage === '' || currentPage === 'index.html') && 
+            (href === 'index.html' || href === '/' || href === '')) {
+            link.classList.add('active');
+        }
+        // Для остальных страниц
+        else if (href === currentPage) {
             link.classList.add('active');
         }
     });
@@ -74,7 +105,10 @@ function highlightActiveMenuItem() {
  */
 function initSmoothScroll() {
     const scrollLinks = document.querySelectorAll('a[href^="#"]');
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.main-nav');
+    const header = document.querySelector('header');
+    
+    if (!scrollLinks.length || !nav || !header) return;
     
     scrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -83,6 +117,9 @@ function initSmoothScroll() {
             // Закрываем мобильное меню при клике на ссылку
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
+                document.querySelector('.menu-btn').classList.remove('active');
+                document.querySelector('.menu-overlay').classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
             
             const targetId = this.getAttribute('href');
@@ -92,7 +129,7 @@ function initSmoothScroll() {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const headerHeight = header.offsetHeight;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
                     window.scrollTo({
@@ -110,6 +147,8 @@ function initSmoothScroll() {
  */
 function initHeaderAnimation() {
     const header = document.querySelector('header');
+    if (!header) return;
+    
     let lastScrollTop = 0;
     
     window.addEventListener('scroll', function() {

@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуги - Snoopy Dogs</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"></script>
 </head>
 <body>
     <div class="menu-overlay"></div>
-    <header>
+    
+    <!-- Хедер (общий для всех страниц) -->
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
@@ -23,226 +26,222 @@
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="menu-btn">
+            <button class="menu-btn">
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Услуги</h1>
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> / Услуги
-            </div>
-        </div>
-    </section>
-
-    <section class="services-tabs">
-        <div class="container">
-            <div class="tabs-container">
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="dogs">Для собак</button>
-                    <button class="tab-btn" data-tab="cats">Для кошек</button>
+    <!-- Основной контент -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Услуги</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / Услуги
                 </div>
-                
-                <div class="tab-content active" id="dogs">
-                    <h2 class="section-subtitle animate-on-scroll">Услуги для собак</h2>
-                    <div class="services-grid">
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/1.png" alt="Комплексный груминг для собак">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-cut"></i>
-                                </div>
-                                <h3>Комплексный груминг</h3>
-                                <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Мытье специальным шампунем</li>
-                                    <li><i class="fas fa-check"></i> Сушка и расчесывание</li>
-                                    <li><i class="fas fa-check"></i> Стрижка по стандарту породы</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                    <li><i class="fas fa-check"></i> Чистка ушей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 2500 ₽</span>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+        </section>
+
+        <section class="section services-tabs">
+            <div class="container">
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="dogs">Для собак</button>
+                        <button class="tab-btn" data-tab="cats">Для кошек</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="dogs">
+                        <h2 class="section-title animate-item">Услуги для собак</h2>
                         
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/2.png" alt="Гигиеническая стрижка для собак">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-bath"></i>
+                        <div class="services-grid">
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/1.png" alt="Комплексный груминг">
                                 </div>
-                                <h3>Гигиеническая стрижка</h3>
-                                <p>Базовый уход за шерстью вашего питомца</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Стрижка на лапах, под хвостом и на животе</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                    <li><i class="fas fa-check"></i> Чистка ушей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 1500 ₽</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/3.png" alt="Модельная стрижка для собак">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-scissors"></i>
-                                </div>
-                                <h3>Модельная стрижка</h3>
-                                <p>Креативные стрижки для вашего питомца</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Мытье специальным шампунем</li>
-                                    <li><i class="fas fa-check"></i> Сушка и расчесывание</li>
-                                    <li><i class="fas fa-check"></i> Стрижка по индивидуальному дизайну</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 3000 ₽</span>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <h3>Комплексный груминг</h3>
+                                    <p>Полный уход за шерстью и внешним видом вашего питомца</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Купание с шампунем и кондиционером</li>
+                                        <li><i class="fas fa-check"></i> Сушка и укладка феном</li>
+                                        <li><i class="fas fa-check"></i> Стрижка по породе или на усмотрение владельца</li>
+                                        <li><i class="fas fa-check"></i> Подстригание когтей</li>
+                                        <li><i class="fas fa-check"></i> Чистка ушей и глаз</li>
+                                    </ul>
+                                    <div class="service-price">от 2000 ₽</div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/4.png" alt="Экспресс-линька для собак">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-paw"></i>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/2.png" alt="Гигиеническая стрижка">
                                 </div>
-                                <h3>Экспресс-линька</h3>
-                                <p>Удаление отмершей шерсти для снижения линьки</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Специальное мытье</li>
-                                    <li><i class="fas fa-check"></i> Обработка фурминатором</li>
-                                    <li><i class="fas fa-check"></i> Вычесывание специальными щетками</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 1800 ₽</span>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-scissors"></i>
+                                    </div>
+                                    <h3>Гигиеническая стрижка</h3>
+                                    <p>Базовый уход за шерстью и гигиеной питомца</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Стрижка лап, подушечек</li>
+                                        <li><i class="fas fa-check"></i> Стрижка в области санитарии</li>
+                                        <li><i class="fas fa-check"></i> Подстригание когтей</li>
+                                        <li><i class="fas fa-check"></i> Чистка ушей и глаз</li>
+                                    </ul>
+                                    <div class="service-price">от 1000 ₽</div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/3.png" alt="Креативный груминг">
+                                </div>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <h3>Креативный груминг</h3>
+                                    <p>Уникальные стрижки и окрашивание для особенных питомцев</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Креативная стрижка по эскизу</li>
+                                        <li><i class="fas fa-check"></i> Безопасное окрашивание</li>
+                                        <li><i class="fas fa-check"></i> Декоративные элементы</li>
+                                        <li><i class="fas fa-check"></i> Фотосессия результата</li>
+                                    </ul>
+                                    <div class="service-price">от 3500 ₽</div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/4.png" alt="Купание и сушка">
+                                </div>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-bath"></i>
+                                    </div>
+                                    <h3>Купание и сушка</h3>
+                                    <p>Очищение шерсти с использованием профессиональной косметики</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Купание с шампунем по типу шерсти</li>
+                                        <li><i class="fas fa-check"></i> Нанесение кондиционера</li>
+                                        <li><i class="fas fa-check"></i> Профессиональная сушка</li>
+                                        <li><i class="fas fa-check"></i> Расчесывание</li>
+                                    </ul>
+                                    <div class="service-price">от 1200 ₽</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="tab-content" id="cats">
-                    <h2 class="section-subtitle animate-on-scroll">Услуги для кошек</h2>
-                    <div class="services-grid">
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/5.png" alt="Комплексный груминг для кошек">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-cut"></i>
-                                </div>
-                                <h3>Комплексный груминг</h3>
-                                <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Мытье специальным шампунем</li>
-                                    <li><i class="fas fa-check"></i> Сушка и расчесывание</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                    <li><i class="fas fa-check"></i> Чистка ушей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 2000 ₽</span>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <div class="tab-content" id="cats">
+                        <h2 class="section-title animate-item">Услуги для кошек</h2>
                         
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/6.png" alt="Гигиеническая стрижка для кошек">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-bath"></i>
+                        <div class="services-grid">
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/5.png" alt="Комплексный груминг для кошек">
                                 </div>
-                                <h3>Гигиеническая стрижка</h3>
-                                <p>Стрижка проблемных зон и базовый уход</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Стрижка спутанной шерсти</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                    <li><i class="fas fa-check"></i> Чистка ушей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 1300 ₽</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/7.png" alt="Стрижка под льва для кошек">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-scissors"></i>
-                                </div>
-                                <h3>Стрижка "под льва"</h3>
-                                <p>Креативная стрижка с сохранением гривы и кисточки на хвосте</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Мытье специальным шампунем</li>
-                                    <li><i class="fas fa-check"></i> Сушка и расчесывание</li>
-                                    <li><i class="fas fa-check"></i> Креативная стрижка</li>
-                                    <li><i class="fas fa-check"></i> Подстригание когтей</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 2500 ₽</span>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <h3>Комплексный груминг</h3>
+                                    <p>Полный уход за шерстью и внешним видом кошки</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Купание специальным шампунем</li>
+                                        <li><i class="fas fa-check"></i> Бережная сушка феном</li>
+                                        <li><i class="fas fa-check"></i> Стрижка по породе</li>
+                                        <li><i class="fas fa-check"></i> Подстригание когтей</li>
+                                        <li><i class="fas fa-check"></i> Чистка ушей и глаз</li>
+                                    </ul>
+                                    <div class="service-price">от 2500 ₽</div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="service-card animate-on-scroll">
-                            <div class="service-image">
-                                <img src="img/1.png" alt="Вычесывание колтунов для кошек">
-                            </div>
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <i class="fas fa-paw"></i>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/6.png" alt="Удаление колтунов">
                                 </div>
-                                <h3>Вычесывание колтунов</h3>
-                                <p>Удаление колтунов и профилактика их появления</p>
-                                <ul class="service-includes">
-                                    <li><i class="fas fa-check"></i> Бережное удаление колтунов</li>
-                                    <li><i class="fas fa-check"></i> Обработка шерсти антистатиком</li>
-                                    <li><i class="fas fa-check"></i> Рекомендации по уходу</li>
-                                </ul>
-                                <div class="service-price">
-                                    <span>от 1500 ₽</span>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-broom"></i>
+                                    </div>
+                                    <h3>Удаление колтунов</h3>
+                                    <p>Профессиональное удаление колтунов любой сложности</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Бережное вычесывание</li>
+                                        <li><i class="fas fa-check"></i> Использование колтунорезов</li>
+                                        <li><i class="fas fa-check"></i> Обработка проблемных зон</li>
+                                        <li><i class="fas fa-check"></i> Рекомендации по уходу</li>
+                                    </ul>
+                                    <div class="service-price">от 1500 ₽</div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/7.png" alt="Модельная стрижка">
+                                </div>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-scissors"></i>
+                                    </div>
+                                    <h3>Модельная стрижка</h3>
+                                    <p>Создание красивого образа для вашего пушистого питомца</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Стрижка под породу</li>
+                                        <li><i class="fas fa-check"></i> Стрижка лап, живота</li>
+                                        <li><i class="fas fa-check"></i> Оформление мордочки</li>
+                                        <li><i class="fas fa-check"></i> Выравнивание силуэта</li>
+                                    </ul>
+                                    <div class="service-price">от 2000 ₽</div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card animate-item">
+                                <div class="service-image">
+                                    <img src="img/8.png" alt="Экспресс-линька">
+                                </div>
+                                <div class="service-details">
+                                    <div class="service-icon">
+                                        <i class="fas fa-paw"></i>
+                                    </div>
+                                    <h3>Экспресс-линька</h3>
+                                    <p>Удаление отмершей шерсти специальными инструментами</p>
+                                    <ul class="service-includes">
+                                        <li><i class="fas fa-check"></i> Вычесывание фурминатором</li>
+                                        <li><i class="fas fa-check"></i> Обработка специальными средствами</li>
+                                        <li><i class="fas fa-check"></i> Удаление подшерстка</li>
+                                        <li><i class="fas fa-check"></i> Финальное расчесывание</li>
+                                    </ul>
+                                    <div class="service-price">от 1300 ₽</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="call-to-action">
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Запишитесь на груминг уже сегодня</h2>
-                <p>Подарите своему питомцу заботу и профессиональный уход</p>
-                <a href="contacts.html" class="btn">Записаться</a>
+        </section>
+        
+        <!-- CTA секция -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content animate-item">
+                    <h2>Запишитесь на груминг уже сегодня</h2>
+                    <p>Подарите своему питомцу заботу и профессиональный уход</p>
+                    <a href="contacts.html" class="btn">Записаться</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
+    <!-- Футер (общий для всех страниц) -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -284,10 +283,6 @@
         </div>
     </footer>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/maps.js"></script>
+    <script defer src="js/app.min.js"></script>
 </body>
 </html> 

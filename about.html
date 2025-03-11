@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - Snoopy Dogs</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Подключение API Яндекс.Карт -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU" type="text/javascript"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"></script>
 </head>
 <body>
     <div class="menu-overlay"></div>
-    <header>
+    
+    <!-- Хедер (общий для всех страниц) -->
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
@@ -25,64 +26,71 @@
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="menu-btn">
+            <button class="menu-btn">
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>О нас</h1>
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> / О нас
+    <!-- Основной контент -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>О нас</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / О нас
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-page">
-        <div class="container">
-            <!-- Основная информационная секция -->
-            <div class="section-wrapper">
-                <h2 class="section-title animate-on-scroll">Наша История</h2>
+        <section class="section">
+            <div class="container">
+                <!-- Основная информационная секция -->
+                <h2 class="section-title animate-item">Наша История</h2>
                 <div class="about-content">
-                    <div class="about-text animate-on-scroll">
+                    <div class="about-text animate-item">
                         <p>Салон груминга "Snoopy Dogs" был основан в 2018 году группой профессиональных грумеров, влюбленных в свое дело. Мы начинали как небольшой салон, но благодаря качеству наших услуг и заботе о каждом питомце, быстро завоевали популярность среди владельцев домашних животных.</p>
                         <p>Сегодня "Snoopy Dogs" — это современный груминг-салон, оснащенный всем необходимым оборудованием для качественного ухода за питомцами разных пород и размеров.</p>
+                        <p>Мы стремимся создать максимально комфортные условия как для владельцев, так и для их четвероногих друзей. Наша цель — не просто стрижка или уход, а создание приятного опыта и настоящего преображения для вашего питомца.</p>
                     </div>
-                    <div class="about-image animate-on-scroll">
-                        <img src="img/2.png" alt="Команда Snoopy Dogs">
+                    <div class="about-image-grid animate-item">
+                        <img src="img/1.png" alt="Наш салон">
+                        <img src="img/2.png" alt="Рабочее место грумера">
+                        <img src="img/3.png" alt="Процесс груминга">
+                        <img src="img/4.png" alt="Наши клиенты">
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Секция с преимуществами -->
-            <div class="section-wrapper">
-                <h2 class="section-title animate-on-scroll">Почему выбирают нас</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card animate-on-scroll">
-                        <div class="benefit-icon">
+        <!-- Секция с преимуществами -->
+        <section class="section features-section bg-light">
+            <div class="container">
+                <h2 class="section-title animate-item">Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
                             <i class="fas fa-certificate"></i>
                         </div>
                         <h3>Профессионализм</h3>
                         <p>Наша команда состоит из сертифицированных грумеров с многолетним опытом работы с животными различных пород.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
-                        <div class="benefit-icon">
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3>Индивидуальный подход</h3>
                         <p>Мы учитываем особенности характера и здоровья каждого питомца, обеспечивая комфортные условия.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
-                        <div class="benefit-icon">
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Безопасность</h3>
                         <p>Используем только качественную косметику, безопасную для животных, и современное оборудование.</p>
                     </div>
-                    <div class="benefit-card animate-on-scroll">
-                        <div class="benefit-icon">
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <h3>Удобный график</h3>
@@ -90,14 +98,16 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Секция команды -->
-            <div class="section-wrapper">
-                <h2 class="section-title animate-on-scroll">Наша команда</h2>
+        <!-- Секция команды -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title animate-item">Наша команда</h2>
                 <div class="team-grid">
-                    <div class="team-card animate-on-scroll">
+                    <div class="team-card animate-item">
                         <div class="team-image">
-                            <img src="img/3.png" alt="Грумер Анна">
+                            <img src="img/5.png" alt="Грумер Анна">
                         </div>
                         <div class="team-info">
                             <h3>Анна</h3>
@@ -110,9 +120,9 @@
                         </div>
                     </div>
                     
-                    <div class="team-card animate-on-scroll">
+                    <div class="team-card animate-item">
                         <div class="team-image">
-                            <img src="img/4.png" alt="Грумер Михаил">
+                            <img src="img/6.png" alt="Грумер Михаил">
                         </div>
                         <div class="team-info">
                             <h3>Михаил</h3>
@@ -125,9 +135,9 @@
                         </div>
                     </div>
                     
-                    <div class="team-card animate-on-scroll">
+                    <div class="team-card animate-item">
                         <div class="team-image">
-                            <img src="img/5.png" alt="Грумер Екатерина">
+                            <img src="img/7.png" alt="Грумер Екатерина">
                         </div>
                         <div class="team-info">
                             <h3>Екатерина</h3>
@@ -141,10 +151,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- CTA секция -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content animate-item">
+                    <h2>Запишитесь на груминг уже сегодня</h2>
+                    <p>Подарите своему питомцу заботу и профессиональный уход</p>
+                    <a href="contacts.html" class="btn">Записаться</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
+    <!-- Футер (общий для всех страниц) -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -186,10 +208,6 @@
         </div>
     </footer>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/maps.js"></script>
+    <script defer src="js/app.min.js"></script>
 </body>
 </html> 

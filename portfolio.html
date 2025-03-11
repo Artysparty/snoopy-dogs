@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио - Snoopy Dogs</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"></script>
 </head>
 <body>
     <div class="menu-overlay"></div>
-    <header>
+    
+    <!-- Хедер (общий для всех страниц) -->
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
@@ -23,237 +26,194 @@
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="menu-btn">
+            <button class="menu-btn">
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Портфолио</h1>
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> / Портфолио
+    <!-- Основной контент -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Портфолио</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / Портфолио
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="portfolio">
-        <div class="container">
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Все работы</button>
-                <button class="filter-btn" data-filter="dogs">Собаки</button>
-                <button class="filter-btn" data-filter="cats">Кошки</button>
-                <button class="filter-btn" data-filter="creative">Креатив</button>
+        <section class="section portfolio">
+            <div class="container">
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">Все работы</button>
+                    <button class="filter-btn" data-filter="dogs">Собаки</button>
+                    <button class="filter-btn" data-filter="cats">Кошки</button>
+                    <button class="filter-btn" data-filter="creative">Креатив</button>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item animate-item" data-category="dogs">
+                        <div class="portfolio-image">
+                            <img src="img/1.png" alt="Стрижка йоркширского терьера">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Стрижка йоркширского терьера</h3>
+                                    <p>Модельная стрижка с сохранением длины на ушах</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="dogs">
+                        <div class="portfolio-image">
+                            <img src="img/2.png" alt="Груминг шпица">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Груминг шпица</h3>
+                                    <p>Комплексный уход с оформлением мордочки</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="cats">
+                        <div class="portfolio-image">
+                            <img src="img/3.png" alt="Стрижка персидского кота">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Стрижка персидского кота</h3>
+                                    <p>Гигиеническая стрижка с удалением колтунов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="creative">
+                        <div class="portfolio-image">
+                            <img src="img/4.png" alt="Креативная стрижка пуделя">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Креативная стрижка пуделя</h3>
+                                    <p>Стрижка с элементами креативного дизайна</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="dogs">
+                        <div class="portfolio-image">
+                            <img src="img/5.png" alt="Груминг бишон фризе">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Груминг бишон фризе</h3>
+                                    <p>Комплексный уход за шерстью и стрижка по стандарту</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="cats">
+                        <div class="portfolio-image">
+                            <img src="img/6.png" alt="Груминг мейн-куна">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Груминг мейн-куна</h3>
+                                    <p>Вычесывание и удаление подшерстка</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="creative">
+                        <div class="portfolio-image">
+                            <img src="img/7.png" alt="Креативное окрашивание собаки">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Креативное окрашивание</h3>
+                                    <p>Безопасное окрашивание шерсти в яркие цвета</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="dogs">
+                        <div class="portfolio-image">
+                            <img src="img/1.png" alt="Стрижка ши-тцу">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Стрижка ши-тцу</h3>
+                                    <p>Короткая стрижка с оформлением мордочки</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="cats">
+                        <div class="portfolio-image">
+                            <img src="img/2.png" alt="Стрижка кота под льва">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Стрижка кота "под льва"</h3>
+                                    <p>Креативная стрижка с сохранением гривы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="creative">
+                        <div class="portfolio-image">
+                            <img src="img/3.png" alt="Стайлинг для выставки">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Стайлинг для выставки</h3>
+                                    <p>Профессиональная подготовка собаки к выставке</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="dogs">
+                        <div class="portfolio-image">
+                            <img src="img/4.png" alt="Груминг кокер-спаниеля">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Груминг кокер-спаниеля</h3>
+                                    <p>Стрижка и уход за ушами и лапами</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-item" data-category="cats">
+                        <div class="portfolio-image">
+                            <img src="img/5.png" alt="Груминг сфинкса">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Груминг сфинкса</h3>
+                                    <p>Бережный уход за кожей бесшерстной породы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item animate-on-scroll" data-category="dogs">
-                    <div class="portfolio-image">
-                        <img src="img/1.png" alt="Портфолио 1">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Йоркширский терьер</h3>
-                                <p>Модельная стрижка</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs">
-                    <div class="portfolio-image">
-                        <img src="img/2.png" alt="Портфолио 2">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Пудель</h3>
-                                <p>Стрижка по стандарту породы</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="cats">
-                    <div class="portfolio-image">
-                        <img src="img/3.png" alt="Портфолио 3">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Персидская кошка</h3>
-                                <p>Гигиеническая стрижка</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs creative">
-                    <div class="portfolio-image">
-                        <img src="img/4.png" alt="Портфолио 4">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Шпиц</h3>
-                                <p>Креативное окрашивание</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="cats creative">
-                    <div class="portfolio-image">
-                        <img src="img/5.png" alt="Портфолио 5">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Мейн-кун</h3>
-                                <p>Стрижка "под льва"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs">
-                    <div class="portfolio-image">
-                        <img src="img/6.png" alt="Портфолио 6">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Бишон фризе</h3>
-                                <p>Комплексный груминг</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs">
-                    <div class="portfolio-image">
-                        <img src="img/7.png" alt="Портфолио 7">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Шнауцер</h3>
-                                <p>Тримминг</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="cats">
-                    <div class="portfolio-image">
-                        <img src="img/1.png" alt="Портфолио 8">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Британская кошка</h3>
-                                <p>Экспресс-линька</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs creative">
-                    <div class="portfolio-image">
-                        <img src="img/2.png" alt="Портфолио 9">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Самоед</h3>
-                                <p>Креативное окрашивание</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="cats creative">
-                    <div class="portfolio-image">
-                        <img src="img/3.png" alt="Портфолио 10">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Сфинкс</h3>
-                                <p>СПА-процедура</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="dogs">
-                    <div class="portfolio-image">
-                        <img src="img/4.png" alt="Портфолио 11">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Чихуахуа</h3>
-                                <p>Гигиенический уход</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item animate-on-scroll" data-category="cats">
-                    <div class="portfolio-image">
-                        <img src="img/5.png" alt="Портфолио 12">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Сиамская кошка</h3>
-                                <p>Чистка ушей и когтей</p>
-                            </div>
-                        </div>
-                    </div>
+        </section>
+        
+        <!-- CTA секция -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content animate-item">
+                    <h2>Хотите такую же красоту для своего питомца?</h2>
+                    <p>Запишитесь на груминг прямо сейчас!</p>
+                    <a href="contacts.html" class="btn">Записаться</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Отзывы наших клиентов</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Очень довольна работой мастера Анны! Мой йорк Боня выглядит великолепно. Теперь только к вам!"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-photo">
-                                <img src="img/6.png" alt="Клиент 1">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>Марина К.</h4>
-                                <p>Хозяйка йоркширского терьера</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Мой кот был в ужасном состоянии из-за колтунов. Мастера сработали бережно и профессионально. Рекомендую!"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-photo">
-                                <img src="img/7.png" alt="Клиент 2">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>Александр П.</h4>
-                                <p>Хозяин персидского кота</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Привела своего шпица на стрижку. Результат превзошел все ожидания! Спасибо за внимательное отношение к питомцам."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-photo">
-                                <img src="img/1.png" alt="Клиент 3">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>Елена В.</h4>
-                                <p>Хозяйка шпица</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <!-- Футер (общий для всех страниц) -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -295,10 +255,6 @@
         </div>
     </footer>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/maps.js"></script>
+    <script defer src="js/app.min.js"></script>
 </body>
 </html> 

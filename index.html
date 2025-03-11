@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snoopy Dogs - Салон груминга</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Подключение API Яндекс.Карт -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU" type="text/javascript"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"></script>
 </head>
 <body>
     <div class="menu-overlay"></div>
-    <header>
+    
+    <!-- Хедер (общий для всех страниц) -->
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
@@ -25,182 +26,134 @@
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="menu-btn">
+            <button class="menu-btn">
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="animate-on-scroll">Профессиональный груминг для вашего питомца</h1>
-                <p class="animate-on-scroll">Мы заботимся о внешнем виде и здоровье ваших пушистых друзей</p>
-                <div class="hero-buttons animate-on-scroll">
-                    <a href="services.html" class="btn">Наши услуги</a>
-                    <a href="contacts.html" class="btn btn-outline">Записаться</a>
+    <!-- Основной контент -->
+    <main>
+        <!-- Hero секция -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-item">Профессиональный груминг для вашего питомца</h1>
+                    <p class="animate-item">Мы заботимся о внешнем виде и здоровье ваших пушистых друзей</p>
+                    <div class="buttons animate-item">
+                        <a href="services.html" class="btn">Наши услуги</a>
+                        <a href="contacts.html" class="btn btn-outline">Записаться</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Секция преимуществ -->
+        <section class="section features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Опытные мастера</h3>
+                        <p>Наши грумеры имеют профессиональные сертификаты и многолетний опыт работы</p>
+                    </div>
+                    
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Мы учитываем особенности характера и здоровья каждого питомца</p>
+                    </div>
+                    
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Безопасность</h3>
+                        <p>Используем только качественную косметику и инструменты для животных</p>
+                    </div>
+                    
+                    <div class="feature-card animate-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Удобная запись</h3>
+                        <p>Быстрая запись онлайн или по телефону в удобное для вас время</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Секция услуг -->
+        <section class="section services-section bg-light">
+            <div class="container">
+                <h2 class="section-title animate-item">Популярные услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-item">
+                        <div class="service-image">
+                            <img src="img/5.png" alt="Комплексный груминг для собак">
+                        </div>
+                        <div class="service-details">
+                            <div class="service-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>Комплексный груминг для собак</h3>
+                            <p>Полный уход за шерстью и внешним видом вашего питомца</p>
+                            <a href="services.html" class="btn btn-sm">Подробнее</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-item">
+                        <div class="service-image">
+                            <img src="img/6.png" alt="Комплексный груминг для кошек">
+                        </div>
+                        <div class="service-details">
+                            <div class="service-icon">
+                                <i class="fas fa-bath"></i>
+                            </div>
+                            <h3>Комплексный груминг для кошек</h3>
+                            <p>Полный уход за шерстью и внешним видом вашего питомца</p>
+                            <a href="services.html" class="btn btn-sm">Подробнее</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-item">
+                        <div class="service-image">
+                            <img src="img/7.png" alt="Креативные стрижки">
+                        </div>
+                        <div class="service-details">
+                            <div class="service-icon">
+                                <i class="fas fa-scissors"></i>
+                            </div>
+                            <h3>Креативные стрижки</h3>
+                            <p>Уникальные стрижки для особенных питомцев</p>
+                            <a href="services.html" class="btn btn-sm">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-lg">
+                    <a href="services.html" class="btn">Все услуги</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA секция -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content animate-item">
+                    <h2>Запишитесь на груминг уже сегодня</h2>
+                    <p>Подарите своему питомцу заботу и профессиональный уход</p>
+                    <a href="contacts.html" class="btn">Записаться</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>Опытные мастера</h3>
-                    <p>Наши грумеры имеют профессиональные сертификаты и многолетний опыт работы</p>
-                </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Индивидуальный подход</h3>
-                    <p>Мы учитываем особенности характера и здоровья каждого питомца</p>
-                </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Безопасность</h3>
-                    <p>Используем только качественную косметику и инструменты для животных</p>
-                </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Удобная запись</h3>
-                    <p>Быстрая запись онлайн или по телефону в удобное для вас время</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="home-services">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Популярные услуги</h2>
-            <div class="home-services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="img/5.png" alt="Комплексный груминг для собак">
-                    </div>
-                    <div class="service-details">
-                        <div class="service-icon">
-                            <i class="fas fa-cut"></i>
-                        </div>
-                        <h3>Комплексный груминг для собак</h3>
-                        <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                        <a href="services.html" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="img/6.png" alt="Комплексный груминг для кошек">
-                    </div>
-                    <div class="service-details">
-                        <div class="service-icon">
-                            <i class="fas fa-bath"></i>
-                        </div>
-                        <h3>Комплексный груминг для кошек</h3>
-                        <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                        <a href="services.html" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="img/7.png" alt="Креативные стрижки">
-                    </div>
-                    <div class="service-details">
-                        <div class="service-icon">
-                            <i class="fas fa-scissors"></i>
-                        </div>
-                        <h3>Креативные стрижки</h3>
-                        <p>Уникальные стрижки для особенных питомцев</p>
-                        <a href="services.html" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="services-more animate-on-scroll">
-                <a href="services.html" class="btn">Все услуги</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="home-gallery">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Наши работы</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-image">
-                        <img src="img/1.png" alt="Фото работы 1">
-                        <div class="gallery-overlay">
-                            <a href="portfolio.html" class="gallery-link">Смотреть портфолио</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-image">
-                        <img src="img/2.png" alt="Фото работы 2">
-                        <div class="gallery-overlay">
-                            <a href="portfolio.html" class="gallery-link">Смотреть портфолио</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-image">
-                        <img src="img/3.png" alt="Фото работы 3">
-                        <div class="gallery-overlay">
-                            <a href="portfolio.html" class="gallery-link">Смотреть портфолио</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-image">
-                        <img src="img/4.png" alt="Фото работы 4">
-                        <div class="gallery-overlay">
-                            <a href="portfolio.html" class="gallery-link">Смотреть портфолио</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-more animate-on-scroll">
-                <a href="portfolio.html" class="btn">Больше работ</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="home-about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <h2 class="section-title">О нашем салоне</h2>
-                    <p>Салон груминга "Snoopy Dogs" — это место, где вашему питомцу обеспечат профессиональный уход и заботу. Наши мастера имеют многолетний опыт работы с животными различных пород и темпераментов.</p>
-                    <p>Мы используем только качественную косметику, безопасную для животных, и современное оборудование. Наша цель — сделать процедуру груминга комфортной и приятной для вашего питомца.</p>
-                    <a href="about.html" class="btn">Подробнее о нас</a>
-                </div>
-                <div class="about-image animate-on-scroll">
-                    <img src="img/1.png" alt="Фото салона">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="call-to-action">
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Запишитесь на груминг уже сегодня</h2>
-                <p>Подарите своему питомцу заботу и профессиональный уход</p>
-                <a href="contacts.html" class="btn">Записаться</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <!-- Футер (общий для всех страниц) -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -242,10 +195,6 @@
         </div>
     </footer>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/maps.js"></script>
+    <script defer src="js/app.min.js"></script>
 </body>
 </html> 
