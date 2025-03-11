@@ -5,16 +5,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('nav');
     const menuOverlay = document.querySelector('.menu-overlay');
     
+    // Выделение активного пункта меню
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (currentPage === linkPage || (currentPage === '' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+    
     if (menuBtn) {
         menuBtn.addEventListener('click', function() {
             nav.classList.toggle('active');
             this.classList.toggle('active');
             menuOverlay.classList.toggle('active');
-            // Блокируем прокрутку страницы при открытом меню
             document.body.classList.toggle('menu-open');
         });
         
-        // Закрытие меню при клике на затемнение
         menuOverlay.addEventListener('click', function() {
             nav.classList.remove('active');
             menuBtn.classList.remove('active');
@@ -22,6 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.remove('menu-open');
         });
     }
+    
+    // Закрытие мобильного меню при клике на ссылку
+    const menuLinks = document.querySelectorAll('nav a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
     
     // Плавный скролл к якорям
     const scrollLinks = document.querySelectorAll('a[href^="#"]');
@@ -201,12 +223,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Обработка вкладок (для страницы услуг)
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Удаляем активный класс у всех кнопок
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Добавляем активный класс выбранной кнопке
+                this.classList.add('active');
+                
+                // Получаем ID контента, который нужно показать
+                const tabId = this.getAttribute('data-tab');
+                
+                // Скрываем все контенты
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Показываем нужный контент
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    }
+    
+    // Фильтрация портфолио
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Удаляем активный класс у всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Добавляем активный класс выбранной кнопке
+                this.classList.add('active');
+                
+                // Получаем фильтр
+                const filter = this.getAttribute('data-filter');
+                
+                // Фильтруем элементы
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
+    
     // Инициализация Яндекс карты
     function initYandexMap() {
-        // Проверяем, загружен ли API Яндекс.Карт
-        if (typeof ymaps !== 'undefined') {
+        // Проверяем, загружен ли API Яндекс.Карт и существует ли элемент карты на странице
+        if (typeof ymaps !== 'undefined' && document.getElementById('map')) {
             ymaps.ready(function() {
-                // Координаты салона (замените на реальные координаты)
+                // Координаты салона
                 const salonCoordinates = [55.942219, 37.870212]; // Москва, центр (пример)
                 
                 // Создаем карту
@@ -230,9 +310,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `
                 }, {
-                    // Опции метки
-                    preset: 'islands#redDogIcon', // Иконка собаки красного цвета
-                    iconColor: '#e85a4f' // Обновляем цвет иконки на коралловый/терракотовый
+                    preset: 'islands#redDogIcon',
+                    iconColor: '#AEC5EB' // Обновленный цвет метки соответствует новой цветовой гамме
                 });
                 
                 // Добавляем метку на карту

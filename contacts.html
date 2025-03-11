@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Snoopy Dogs</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU&load=Map,Placemark,control.ZoomControl,control.GeolocationControl" type="text/javascript"></script>
+</head>
+<body>
+    <div class="menu-overlay"></div>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Контакты</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> / Контакты
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>ул. Пушистая, д. 15<br>г. Москва, 123456</p>
+                </div>
+                
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Телефон</h3>
+                    <p>+7 (999) 123-45-67<br>+7 (999) 765-43-21</p>
+                </div>
+                
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@snoopydogs.ru<br>booking@snoopydogs.ru</p>
+                </div>
+                
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Часы работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="contact-form-content">
+                    <h2 class="section-title animate-on-scroll">Свяжитесь с нами</h2>
+                    <p class="section-description animate-on-scroll">Заполните форму ниже, и мы свяжемся с вами в ближайшее время для подтверждения записи или ответа на ваши вопросы.</p>
+                    
+                    <form id="contactForm" class="contact-form animate-on-scroll">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Тема</label>
+                            <select id="subject" name="subject">
+                                <option value="booking">Запись на груминг</option>
+                                <option value="question">Вопрос о услугах</option>
+                                <option value="feedback">Отзыв</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                        </div>
+                    </form>
+                    
+                    <div id="formSuccess" class="form-success">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Спасибо за ваше сообщение!</h3>
+                        <p>Мы свяжемся с вами в ближайшее время.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Как нас найти</h2>
+            <div class="map-container animate-on-scroll">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Мы в социальных сетях</h2>
+            <div class="social-grid">
+                <a href="#" class="social-card animate-on-scroll">
+                    <div class="social-icon">
+                        <i class="fab fa-vk"></i>
+                    </div>
+                    <h3>ВКонтакте</h3>
+                    <p>Подписывайтесь на нашу группу</p>
+                </a>
+                
+                <a href="#" class="social-card animate-on-scroll">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Следите за нашими работами</p>
+                </a>
+                
+                <a href="#" class="social-card animate-on-scroll">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Присоединяйтесь к нашему каналу</p>
+                </a>
+                
+                <a href="#" class="social-card animate-on-scroll">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>Смотрите наши видео</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-paw"></i> Snoopy Dogs</h3>
+                    </div>
+                    <p>Профессиональный груминг для ваших любимых питомцев</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Меню</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Пушистая, д. 15, г. Москва</p>
+                        <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@snoopydogs.ru</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/maps.js"></script>
+</body>
+</html> 

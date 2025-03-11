@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Snoopy Dogs</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключение API Яндекс.Карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div class="menu-overlay"></div>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>О нас</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> / О нас
+            </div>
+        </div>
+    </section>
+
+    <section class="about-page">
+        <div class="container">
+            <!-- Основная информационная секция -->
+            <div class="section-wrapper">
+                <h2 class="section-title animate-on-scroll">Наша История</h2>
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <p>Салон груминга "Snoopy Dogs" был основан в 2018 году группой профессиональных грумеров, влюбленных в свое дело. Мы начинали как небольшой салон, но благодаря качеству наших услуг и заботе о каждом питомце, быстро завоевали популярность среди владельцев домашних животных.</p>
+                        <p>Сегодня "Snoopy Dogs" — это современный груминг-салон, оснащенный всем необходимым оборудованием для качественного ухода за питомцами разных пород и размеров.</p>
+                    </div>
+                    <div class="about-image animate-on-scroll">
+                        <img src="img/2.png" alt="Команда Snoopy Dogs">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция с преимуществами -->
+            <div class="section-wrapper">
+                <h2 class="section-title animate-on-scroll">Почему выбирают нас</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Профессионализм</h3>
+                        <p>Наша команда состоит из сертифицированных грумеров с многолетним опытом работы с животными различных пород.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Мы учитываем особенности характера и здоровья каждого питомца, обеспечивая комфортные условия.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Безопасность</h3>
+                        <p>Используем только качественную косметику, безопасную для животных, и современное оборудование.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Удобный график</h3>
+                        <p>Работаем в удобное для вас время, включая выходные дни. Возможен выезд мастера на дом.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция команды -->
+            <div class="section-wrapper">
+                <h2 class="section-title animate-on-scroll">Наша команда</h2>
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-image">
+                            <img src="img/3.png" alt="Грумер Анна">
+                        </div>
+                        <div class="team-info">
+                            <h3>Анна</h3>
+                            <span class="team-position">Ведущий грумер</span>
+                            <p>Специализируется на работе с длинношерстными породами собак. Опыт работы более 7 лет.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-image">
+                            <img src="img/4.png" alt="Грумер Михаил">
+                        </div>
+                        <div class="team-info">
+                            <h3>Михаил</h3>
+                            <span class="team-position">Специалист по стрижке</span>
+                            <p>Эксперт по креативному грумингу и выставочной подготовке собак. Призер международных конкурсов.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-image">
+                            <img src="img/5.png" alt="Грумер Екатерина">
+                        </div>
+                        <div class="team-info">
+                            <h3>Екатерина</h3>
+                            <span class="team-position">Грумер-стилист</span>
+                            <p>Специализируется на работе с кошками всех пород. Имеет сертификаты международного образца.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-paw"></i> Snoopy Dogs</h3>
+                    </div>
+                    <p>Профессиональный груминг для ваших любимых питомцев</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Меню</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Пушистая, д. 15, г. Москва</p>
+                        <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@snoopydogs.ru</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/maps.js"></script>
+</body>
+</html> 
