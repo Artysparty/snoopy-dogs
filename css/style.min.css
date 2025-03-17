@@ -1,12 +1,13 @@
 /* Переменные */
 :root {
-    --primary: #AEC5EB;
-    --secondary: #F5CAC3;
-    --accent: #F7E1D7;
-    --bg: #FAFAFA;
+    --primary: #8280FF; /* Фиолетовый - основной цвет элементов */
+    --secondary: #9FD2F4; /* Голубой - второстепенный цвет элементов */
+    --accent: #F0F0FF; /* Светло-фиолетовый - вспомогательный цвет элементов (был персиковый) */
+    --bg: #FFFFFF; /* Белый - основной цвет фона */
+    --bg-secondary: #F0F0FF; /* Светло-фиолетовый - вспомогательный цвет фона (был персиковый) */
     --text: #555555;
     --text-light: #888888;
-    --hover: #84A0D4;
+    --hover: #6A68D7; /* Темно-фиолетовый для ховер-эффектов */
     --shadow: rgba(0, 0, 0, 0.05);
     --success: #4CAF50;
     --error: #F44336;
@@ -132,7 +133,7 @@ button, input, select, textarea {
 
 /* Хедер */
 .header {
-    background-color: var(--white);
+    background-color: var(--bg);
     box-shadow: 0 2px 10px var(--shadow);
     position: sticky;
     top: 0;
@@ -251,7 +252,7 @@ button, input, select, textarea {
         right: -300px;
         width: 300px;
         height: 100vh;
-        background-color: var(--white);
+        background-color: var(--bg);
         padding: 80px 30px;
         box-shadow: -5px 0 15px var(--shadow);
         transition: right 0.3s ease-in-out;
@@ -323,40 +324,40 @@ button, input, select, textarea {
 
 /* Hero секция */
 .hero {
-    height: 600px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/1.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    padding: 60px 0 100px;
+    background-color: var(--bg);
     position: relative;
 }
 
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
 .hero-content {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 600px;
 }
 
 .hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.hero-content p {
-    font-size: 1.2rem;
+    font-size: 2.6rem;
     margin-bottom: 30px;
-    opacity: 0.9;
+    line-height: 1.3;
 }
 
 .buttons {
     display: flex;
     gap: 15px;
-    justify-content: center;
 }
 
 /* Анимации */
@@ -373,10 +374,17 @@ button, input, select, textarea {
     transform: translateY(0);
 }
 
+/* Пушистый текст */
+.furry-text {
+    /* Возвращаем стандартный стиль для текста */
+    font-family: inherit;
+    color: var(--primary);
+}
+
 /* Футер */
 .footer {
-    background-color: var(--text);
-    color: var(--white);
+    background-color: var(--bg-secondary);
+    color: var(--text);
     padding: 60px 0 30px;
 }
 
@@ -449,7 +457,7 @@ button, input, select, textarea {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(130, 128, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -459,12 +467,13 @@ button, input, select, textarea {
 .social-link:hover {
     background-color: var(--primary);
     transform: translateY(-3px);
+    color: var(--white);
 }
 
 .copyright {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(130, 128, 255, 0.1);
 }
 
 .copyright p {
@@ -475,19 +484,37 @@ button, input, select, textarea {
 
 /* Адаптивность */
 @media (max-width: 992px) {
-    .hero-content h1 {
-        font-size: 2.4rem;
+    .hero {
+        padding: 80px 0;
     }
     
-    .about-content,
-    .contact-grid {
+    .hero-wrapper {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .hero-image {
+        order: 1;
+    }
+    
+    .hero-content {
+        order: 2;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .buttons {
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 576px) {
     .hero {
-        height: 450px;
+        padding: 60px 0;
     }
     
     .hero-content h1 {
@@ -607,7 +634,7 @@ button, input, select, textarea {
 
 /* Карточки услуг */
 .service-card {
-    background-color: var(--white);
+    background-color: var(--bg);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow);
@@ -729,7 +756,7 @@ button, input, select, textarea {
 }
 
 .contact-card {
-    background-color: var(--white);
+    background-color: var(--bg);
     border-radius: var(--radius);
     padding: 30px;
     text-align: center;
@@ -766,7 +793,7 @@ button, input, select, textarea {
 
 /* Форма контактов */
 .contact-form-wrapper {
-    background-color: var(--white);
+    background-color: var(--bg);
     border-radius: var(--radius);
     padding: 40px;
     box-shadow: 0 5px 15px var(--shadow);
@@ -820,7 +847,7 @@ button, input, select, textarea {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(174, 197, 235, 0.2);
+    box-shadow: 0 0 0 2px rgba(130, 128, 255, 0.2);
 }
 
 .contact-form button {
@@ -909,7 +936,7 @@ button, input, select, textarea {
 }
 
 .social-card {
-    background-color: var(--white);
+    background-color: var(--bg);
     padding: 30px;
     border-radius: var(--radius);
     text-align: center;
@@ -967,6 +994,10 @@ button, input, select, textarea {
 
 /* Утилиты */
 .bg-light {
+    background-color: var(--bg-secondary);
+}
+
+.bg-white {
     background-color: var(--bg);
 }
 
@@ -990,9 +1021,75 @@ button, input, select, textarea {
     font-size: 0.9rem;
 }
 
+/* Секция приветствия */
+.welcome-section {
+    padding: 5px 0 0;
+    background-color: var(--bg-secondary);
+}
+
+.welcome-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.welcome-content {
+    padding-right: 20px;
+}
+
+.welcome-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .welcome-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .welcome-content {
+        order: 2;
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .welcome-image {
+        order: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-section {
+        padding: 0px 0 60px;
+    }
+    
+    .welcome-content h2 {
+        font-size: 2rem;
+    }
+    
+    .welcome-content p {
+        font-size: 1.1rem;
+    }
+}
+
 /* Секция преимуществ */
 .features-section {
     padding: 80px 0;
+    background-color: var(--bg);
 }
 
 .features-grid {
@@ -1002,7 +1099,7 @@ button, input, select, textarea {
 }
 
 .feature-card {
-    background-color: var(--white);
+    background-color: var(--bg);
     padding: 30px;
     border-radius: var(--radius);
     text-align: center;
@@ -1039,6 +1136,13 @@ button, input, select, textarea {
 /* Секция услуг на главной */
 .services-section {
     padding: 80px 0;
+    background-color: var(--bg-secondary);
+}
+
+/* Уменьшенное изображение для услуги */
+.smaller-image {
+    max-width: 73%;
+    margin: 0 auto;
 }
 
 /* CTA секция */
@@ -1161,7 +1265,7 @@ button, input, select, textarea {
 }
 
 .portfolio-item {
-    background-color: var(--white);
+    background-color: var(--bg);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow);
@@ -1231,4 +1335,99 @@ button, input, select, textarea {
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
     margin: 0;
+}
+
+/* Дополнительные утилиты для цветовой схемы */
+.bg-primary {
+    background-color: var(--primary);
+    color: var(--bg);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+.bg-accent {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+/* Кнопки в цветах схемы */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--text);
+    box-shadow: 0 4px 10px rgba(159, 210, 244, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #83BBE0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(159, 210, 244, 0.4);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--primary);
+    box-shadow: 0 4px 10px rgba(130, 128, 255, 0.2);
+}
+
+.btn-accent:hover {
+    background-color: #E0E0FF;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(130, 128, 255, 0.3);
+}
+
+/* Карточки на фиолетовом фоне нуждаются в дополнительном эффекте */
+.bg-secondary .feature-card,
+.bg-secondary .service-card,
+.bg-secondary .contact-card,
+.bg-secondary .portfolio-item,
+.bg-secondary .social-card {
+    box-shadow: 0 5px 15px rgba(130, 128, 255, 0.1);
+}
+
+.bg-secondary .feature-card:hover,
+.bg-secondary .service-card:hover,
+.bg-secondary .contact-card:hover,
+.bg-secondary .portfolio-item:hover,
+.bg-secondary .social-card:hover {
+    box-shadow: 0 15px 30px rgba(130, 128, 255, 0.15);
+}
+
+/* Дополнительные эффекты для выделения элементов на фиолетовым фоне */
+.bg-secondary .section-title::after {
+    background-color: var(--primary);
+    opacity: 0.8;
+}
+
+/* Меняем цвет фокуса на формах, чтобы он сочетался с фиолетовым */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(130, 128, 255, 0.2);
+}
+
+/* Дополнительный эффект для карт на фиолетовом фоне */
+.bg-secondary .service-icon,
+.bg-secondary .feature-icon,
+.bg-secondary .contact-icon,
+.bg-secondary .social-icon {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(130, 128, 255, 0.2);
 } 

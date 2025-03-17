@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `
                 }, {
                     preset: 'islands#redDogIcon',
-                    iconColor: '#AEC5EB' // Обновленный цвет метки соответствует новой цветовой гамме
+                    iconColor: '#8280FF' // Обновленный цвет метки соответствует новой цветовой гамме
                 });
                 
                 // Добавляем метку на карту
