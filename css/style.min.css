@@ -1023,7 +1023,7 @@ button, input, select, textarea {
 
 /* Секция приветствия */
 .welcome-section {
-    padding: 5px 0 0;
+    padding: 5px 0 20px;
     background-color: var(--bg-secondary);
 }
 
@@ -1039,50 +1039,62 @@ button, input, select, textarea {
 }
 
 .welcome-content h2 {
-    font-size: 2.4rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
     color: var(--primary);
 }
 
 .welcome-content p {
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.5;
     color: var(--text);
+    margin-bottom: 15px;
 }
 
 .welcome-image img {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 0 auto;
 }
 
 @media (max-width: 992px) {
     .welcome-wrapper {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 10px;
     }
     
     .welcome-content {
-        order: 2;
+        order: 1;
         text-align: center;
         padding-right: 0;
     }
     
     .welcome-image {
-        order: 1;
+        order: 2;
     }
 }
 
 @media (max-width: 576px) {
     .welcome-section {
-        padding: 0px 0 60px;
+        padding: 10px 0 0;
+    }
+    
+    .welcome-content {
+        margin-top: 15px;
     }
     
     .welcome-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
     
     .welcome-content p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .welcome-image img {
+        width: 85%;
     }
 }
 
