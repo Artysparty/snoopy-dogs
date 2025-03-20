@@ -248,6 +248,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Управление закруглением у секции welcome-section при прокрутке
+    const welcomeSection = document.querySelector('.welcome-section');
+    
+    if (welcomeSection) {
+        function checkWelcomeSectionPosition() {
+            const welcomeRect = welcomeSection.getBoundingClientRect();
+            
+            // Если верх секции находится в верхней части экрана (с небольшим отступом для плавности)
+            if (welcomeRect.top <= 5) {
+                welcomeSection.classList.add('at-top');
+            } else {
+                welcomeSection.classList.remove('at-top');
+            }
+        }
+        
+        // Проверяем при прокрутке
+        window.addEventListener('scroll', checkWelcomeSectionPosition);
+        
+        // Проверяем при загрузке страницы
+        checkWelcomeSectionPosition();
+    }
+    
     // Фильтрация портфолио
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');

@@ -1,274 +1,299 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snoopy Dogs - Салон груминга</title>
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"></script>
-</head>
-<body>
-    <div class="menu-overlay"></div>
-    
-    <!-- Хедер (общий для всех страниц) -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-paw"></i> Snoopy Dogs</h1>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="services.html">Услуги</a></li>
-                    <li><a href="portfolio.html">Портфолио</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <button class="menu-btn">
-                <span></span>
-            </button>
-        </div>
-    </header>
 
-    <!-- Основной контент -->
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon/dog16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon/dog32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="img/favicon/dog96.png"
+    />
+    <link rel="apple-touch-icon" href="img/favicon/dog96.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      defer
+      src="https://api-maps.yandex.ru/2.1/?apikey=54043f4c-caef-4b14-bf29-daa92fe47e0b&lang=ru_RU"
+    ></script>
+  </head>
+  <body>
+    <div class="menu-overlay"></div>
+
     <main>
-        <!-- Hero секция -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-wrapper">
-                    <div class="hero-image">
-                        <img src="img/illustrations/at-home.svg" alt="Груминг в домашней обстановке">
-                    </div>
-                    <div class="hero-content">
-                        <h1 class="animate-item furry-text">Добро пожаловать в студию груминга, где любят всех пушистых</h1>
-                        <div class="buttons animate-item">
-                            <a href="services.html" class="btn">Наши услуги</a>
-                            <a href="contacts.html" class="btn btn-outline">Записаться</a>
-                        </div>
-                    </div>
-                </div>
+      <section class="video-hero">
+        <video class="video-background" autoplay muted loop playsinline>
+          <source src="img/video/main-vid.mp4" type="video/mp4" />
+          <img src="img/hero-fallback.jpg" alt="Фоновое изображение" />
+        </video>
+
+        <div class="video-overlay"></div>
+
+        <div class="video-content">
+          <h1 class="video-title">Snoopy Dogs</h1>
+          <p class="video-subtitle">
+            Ваш питомец уже идеален, а мы подчеркнем его красоту!
+          </p>
+          <!-- <a href="contacts.html" class="btn">Записаться</a> -->
+        </div>
+
+        <div class="video-nav">
+          <a href="about.html" class="video-nav-item">О нас</a>
+          <a href="services.html" class="video-nav-item">Услуги</a>
+          <a href="portfolio.html" class="video-nav-item">Портфолио</a>
+          <a href="contacts.html" class="video-nav-item">Контакты</a>
+        </div>
+
+        <div class="video-scroll-indicator">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- Секция приветствия -->
+      <section class="section welcome-section">
+        <div class="container welcome-section__container">
+          <div class="welcome-wrapper">
+            <div class="welcome-content animate-item">
+              <h2>
+                Добро пожаловать в студию груминга, где любят всех пушистых
+              </h2>
+              <div class="welcome-text">
+                <p>
+                  Меня зовут Анна и я идейный вдохновитель студии. Вместе с
+                  Машей мы уже более 10 лет помогаем Вам правильно ухаживать за
+                  своими питомцами. Когда мир был другим, мы работали вместе в
+                  одном салоне , а потом мир изменился и вот уже 5 лет мы
+                  принимаем пушистых гостей в нашей уютной студии с еще большим
+                  вдохновением !
+                </p>
+              </div>
             </div>
-        </section>
-        
-        <!-- Секция приветствия -->
-        <section class="section welcome-section">
-            <div class="container welcome-section__container">
-                <div class="welcome-wrapper">
-                    <div class="welcome-content animate-item">
-                        <h2>🐾 Привет, любители хвостиков!</h2>
-                        <div class="welcome-text">
-                            <p>Меня зовут Аня, и я уже 7 лет без ума от пушистиков! Каждый день я заботливо привожу в порядок ваши хвостики, лапки и даже самые непослушные шерстинки. И знаете что? Хозяева в восторге, а их малыши — счастливы!</p>
-                        </div>
-                    </div>
-                    <div class="welcome-image animate-item">
-                        <img src="img/anna.png" alt="Аня с питомцами">
-                    </div>
-                </div>
+            <div class="welcome-image">
+              <img src="img/anna.png" alt="Аня с питомцами" />
             </div>
-        </section>
-        
-        <!-- Секция преимуществ -->
-        <section class="section features-section">
-            <div class="container">
-                <h2 class="section-title animate-item">Почему к нам приходят снова?</h2>
-                <div class="features-grid">
-                    <div class="feature-card animate-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Любовь к хвостатым</h3>
-                        <p>Для меня это не просто стрижки — это забота о каждом питомце как о своем собственном 🐾</p>
-                    </div>
-                    
-                    <div class="feature-card animate-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Безопасность</h3>
-                        <p>Только проверенные шампуни, нежные расчески и никакой химии — ваши котики и собачки будут в полной безопасности! 🐾</p>
-                    </div>
-                    
-                    <div class="feature-card animate-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <h3>Индивидуальный подход</h3>
-                        <p>Каждый хвостик уникален! Стрижка, когти, бантики — всё подберем с учетом характера вашего друга 🐾</p>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tips-section">
+        <div class="container">
+          <h2 class="section-title animate-item">
+            С кем-то мы еще не знакомы , поэтому пара слов о студии и о наших
+            принципах:
+          </h2>
+          <div class="tips-container">
+            <div class="tip-card animate-item">
+              <div class="tip-content">
+                <p>
+                  мы работаем только во благо животного , никакой агрессии и
+                  давления
+                </p>
+              </div>
             </div>
-        </section>
-        
-        <!-- Секция советов -->
-        <section class="section tips-section">
-            <div class="container">
-                <h2 class="section-title animate-item">А еще:</h2>
-                <div class="tips-container">
-                    <div class="tip-card animate-item">
-                        <div class="tip-icon">👉</div>
-                        <div class="tip-content">
-                            <h3>Блестящий результат</h3>
-                            <p>После ухода ушки будут чистыми, шерстка — блестящей, а настроение — летним!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="tip-card animate-item">
-                        <div class="tip-icon">👉</div>
-                        <div class="tip-content">
-                            <h3>Мой секрет</h3>
-                            <p>Многие питомцы засыпают у меня на руках — и это лучшая награда!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="tip-card animate-item">
-                        <div class="tip-icon">👉</div>
-                        <div class="tip-content">
-                            <h3>Совет от Ани</h3>
-                            <p>Чтобы хвостик всегда был в топ-форме, приходите к нам раз в 1,5–2 месяца! Так шерсть не будет сваливаться, а кожа останется здоровой. А если нужен особый график — подскажу, как часто подстригать коготки или чистить ушки именно вашему пушистому!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-lg">
-                    <a href="contacts.html" class="btn">Записаться</a>
-                </div>
+
+            <div class="tip-card animate-item">
+              <div class="tip-content">
+                <p>
+                  мы сохраняем породный силуэт стрижки сочетая его с пожеланиями
+                  владельцев
+                </p>
+              </div>
             </div>
-        </section>
-        
-        <!-- Секция услуг -->
-        <section class="section services-section">
-            <div class="container">
-                <h2 class="section-title animate-item">Популярные услуги</h2>
-                <div class="services-grid">
-                    <div class="service-card animate-item">
-                        <div class="service-image">
-                            <img src="img/illustrations/dog-shower.svg" alt="Комплексный груминг для собак">
-                        </div>
-                        <div class="service-details">
-                            <div class="service-icon">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <h3>Комплексный груминг для собак</h3>
-                            <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                            <a href="services.html" class="btn btn-sm">Подробнее</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card animate-item">
-                        <div class="service-image">
-                            <img src="img/6.png" alt="Комплексный груминг для кошек">
-                        </div>
-                        <div class="service-details">
-                            <div class="service-icon">
-                                <i class="fas fa-bath"></i>
-                            </div>
-                            <h3>Комплексный груминг для кошек</h3>
-                            <p>Полный уход за шерстью и внешним видом вашего питомца</p>
-                            <a href="services.html" class="btn btn-sm">Подробнее</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card animate-item">
-                        <div class="service-image">
-                            <img src="img/7.png" alt="Креативные стрижки">
-                        </div>
-                        <div class="service-details">
-                            <div class="service-icon">
-                                <i class="fas fa-scissors"></i>
-                            </div>
-                            <h3>Креативные стрижки</h3>
-                            <p>Уникальные стрижки для особенных питомцев</p>
-                            <a href="services.html" class="btn btn-sm">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-lg">
-                    <a href="services.html" class="btn">Все услуги</a>
-                </div>
+
+            <div class="tip-card animate-item">
+              <div class="tip-content">
+                <p>
+                  наши клиенты посещают салон , в среднем, один раз в два- три
+                  месяца для поддержания идеальной формы шерсти питомца
+                </p>
+              </div>
             </div>
-        </section>
-        
-        <!-- CTA секция -->
-        <section class="section cta-section">
-            <div class="falling-icons-container">
-                <i class="falling-icon fas fa-cut"></i>
-                <i class="falling-icon fas fa-soap"></i>
-                <i class="falling-icon fas fa-bath"></i>
-                <i class="falling-icon fas fa-tint"></i>
-                <i class="falling-icon fas fa-paw"></i>
-                <i class="falling-icon fas fa-scissors"></i>
-                <i class="falling-icon fas fa-spray-can"></i>
-                <i class="falling-icon fas fa-pump-soap"></i>
-                <i class="falling-icon fas fa-water"></i>
-                <i class="falling-icon fas fa-bone"></i>
-                <i class="falling-icon fas fa-cut"></i>
-                <i class="falling-icon fas fa-soap"></i>
-                <i class="falling-icon fas fa-shower"></i>
-                <i class="falling-icon fas fa-tint"></i>
-                <i class="falling-icon fas fa-dog"></i>
-                <i class="falling-icon fas fa-cat"></i>
-                <i class="falling-icon fas fa-heart"></i>
-                <i class="falling-icon fas fa-spray-can"></i>
-                <i class="falling-icon fas fa-water"></i>
-                <i class="falling-icon fas fa-paw"></i>
+
+            <div class="tip-card animate-item">
+              <div class="tip-content">
+                <p>авторский метод стрижки кошек без наркоза</p>
+                <p>
+                  [Важно! Если Ваш кот агрессивен, тогда стрижка происходит без
+                  владельца, с помощником. Мы не используем скотч, наркоз ,
+                  перевязывание лап и прочие техники , которые могу причинить
+                  вред здоровью животного. ]
+                </p>
+              </div>
             </div>
-            <div class="container">
-                <div class="cta-content animate-item">
-                    <h2>Не откладывайте заботу!</h2>
-                    <p>🐶 Запишите своего хвостика на спа-день — пусть он почувствует себя звездой!</p>
-                    <p>📅 Регулярный уход = счастливый питомец!</p>
-                    <a href="contacts.html" class="btn">Записаться</a>
+
+            <div class="text-center mt-lg">
+              <a href="contacts.html" class="btn">Записаться</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция услуг -->
+      <section class="section services-section">
+        <div class="container">
+          <h2 class="section-title animate-item">Популярные услуги</h2>
+          <div class="services-grid">
+            <div class="service-card animate-item">
+              <div class="service-image">
+                <img
+                  src="img/illustrations/dog-shower.svg"
+                  alt="Комплексный груминг для собак"
+                />
+              </div>
+              <div class="service-details">
+                <div class="service-icon">
+                  <i class="fas fa-cut"></i>
                 </div>
+                <h3>Комплексный груминг для собак</h3>
+                <p>Полный уход за шерстью и внешним видом вашего питомца</p>
+                <a href="services.html" class="btn btn-sm">Подробнее</a>
+              </div>
             </div>
-        </section>
+
+            <div class="service-card animate-item">
+              <div class="service-image">
+                <img src="img/6.png" alt="Комплексный груминг для кошек" />
+              </div>
+              <div class="service-details">
+                <div class="service-icon">
+                  <i class="fas fa-bath"></i>
+                </div>
+                <h3>Комплексный груминг для кошек</h3>
+                <p>Полный уход за шерстью и внешним видом вашего питомца</p>
+                <a href="services.html" class="btn btn-sm">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="service-card animate-item">
+              <div class="service-image">
+                <img src="img/7.png" alt="Креативные стрижки" />
+              </div>
+              <div class="service-details">
+                <div class="service-icon">
+                  <i class="fas fa-scissors"></i>
+                </div>
+                <h3>Креативные стрижки</h3>
+                <p>Уникальные стрижки для особенных питомцев</p>
+                <a href="services.html" class="btn btn-sm">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-lg">
+            <a href="services.html" class="btn">Все услуги</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA секция -->
+      <section class="section cta-section">
+        <div class="falling-icons-container">
+          <i class="falling-icon fas fa-cut"></i>
+          <i class="falling-icon fas fa-soap"></i>
+          <i class="falling-icon fas fa-bath"></i>
+          <i class="falling-icon fas fa-tint"></i>
+          <i class="falling-icon fas fa-paw"></i>
+          <i class="falling-icon fas fa-scissors"></i>
+          <i class="falling-icon fas fa-spray-can"></i>
+          <i class="falling-icon fas fa-pump-soap"></i>
+          <i class="falling-icon fas fa-water"></i>
+          <i class="falling-icon fas fa-bone"></i>
+          <i class="falling-icon fas fa-cut"></i>
+          <i class="falling-icon fas fa-soap"></i>
+          <i class="falling-icon fas fa-shower"></i>
+          <i class="falling-icon fas fa-tint"></i>
+          <i class="falling-icon fas fa-dog"></i>
+          <i class="falling-icon fas fa-cat"></i>
+          <i class="falling-icon fas fa-heart"></i>
+          <i class="falling-icon fas fa-spray-can"></i>
+          <i class="falling-icon fas fa-water"></i>
+          <i class="falling-icon fas fa-paw"></i>
+        </div>
+        <div class="container">
+          <div class="cta-content animate-item">
+            <h2>Не откладывайте заботу!</h2>
+            <p>
+              🐶 Запишите своего хвостика на спа-день — пусть он почувствует
+              себя звездой!
+            </p>
+            <p>📅 Регулярный уход = счастливый питомец!</p>
+            <a href="contacts.html" class="btn">Записаться</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Футер (общий для всех страниц) -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <h3><i class="fas fa-paw"></i> Snoopy Dogs</h3>
-                    </div>
-                    <p>Профессиональный груминг для ваших любимых питомцев</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Меню</h4>
-                    <ul class="footer-menu">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="portfolio.html">Портфолио</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Контакты</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> ул. Пушистая, д. 15, г. Москва</p>
-                        <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
-                        <p><i class="fas fa-envelope"></i> info@snoopydogs.ru</p>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Социальные сети</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <h3><i class="fas fa-paw"></i> Snoopy Dogs</h3>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+            <p>Профессиональный груминг для ваших любимых питомцев</p>
+          </div>
+          <div class="footer-col">
+            <h4>Меню</h4>
+            <ul class="footer-menu">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="portfolio.html">Портфолио</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> ул. Пушистая, д. 15, г.
+                Москва
+              </p>
+              <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+              <p><i class="fas fa-envelope"></i> info@snoopydogs.ru</p>
             </div>
+          </div>
+          <div class="footer-col">
+            <h4>Социальные сети</h4>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+            </div>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+        </div>
+      </div>
     </footer>
 
     <script defer src="js/app.min.js"></script>
-</body>
-</html> 
+  </body>
+</html>
