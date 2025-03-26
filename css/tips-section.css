@@ -1,0 +1,158 @@
+.tips-section {
+    padding: 80px 0;
+    background-color: var(--white);
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+}
+
+.tips-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tip-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--white);
+    padding: 25px 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid rgba(230, 230, 240, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--primary);
+    border-radius: 5px 0 0 5px;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-strong);
+}
+
+.tip-icon {
+    font-size: 2.2rem;
+    margin-right: 20px;
+    color: var(--primary);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tip-content {
+    flex: 1;
+}
+
+.tip-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.tip-content p {
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .tips-section {
+        padding: 60px 0;
+    }
+    
+    .tip-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .tip-icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+    
+    .tip-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .tip-card {
+        padding: 20px 25px;
+        margin-bottom: 0;
+    }
+    
+    .tip-icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+    
+    .tip-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .tip-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tip-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .tip-icon {
+        font-size: 1.5rem;
+        margin-right: 12px;
+    }
+    
+    .tip-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .tip-content p {
+        font-size: 0.95rem;
+    }
+
+    .tips-section {
+        padding: 50px 0;
+    }
+    
+    .tips-container {
+        gap: 20px;
+    }
+    
+    .tip-card {
+        padding: 15px 20px;
+        margin-bottom: 0;
+    }
+    
+    .tip-icon {
+        font-size: 1.5rem;
+        margin-right: 12px;
+    }
+    
+    .tip-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .tip-content p {
+        font-size: 0.9rem;
+    }
+}
