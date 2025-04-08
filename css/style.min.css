@@ -290,7 +290,8 @@ button, input, select, textarea {
 /* Видео секция */
 .video-hero {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
+    min-height: 600px;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -345,13 +346,16 @@ button, input, select, textarea {
 
 .video-nav {
     position: absolute;
-    bottom: 3rem;
+    bottom: max(3rem, env(safe-area-inset-bottom, 3rem));
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 1.5rem;
     align-items: center;
     z-index: 3;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 800px;
 }
 
 .video-nav-item {
@@ -1078,14 +1082,15 @@ button, input, select, textarea {
     }
 
     .video-nav {
-        bottom: 2.5rem;
-        gap: 1rem;
-    }
-
-    .video-nav-item,
-    .video-nav-btn {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
+        bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
+        padding: 0 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
     }
 
     .header-nav {
@@ -1247,9 +1252,9 @@ button, input, select, textarea {
     }
     
     .video-nav {
-        bottom: 3rem;
-        padding: 1rem;
-    display: grid;
+        bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
+        padding: 0 1.5rem;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
         justify-items: center;
@@ -1303,10 +1308,6 @@ button, input, select, textarea {
     .filter-btn {
         width: 100%;
         max-width: 300px;
-    }
-    
-    .service-card {
-        padding: 1.25rem;
     }
 }
 
@@ -1374,7 +1375,7 @@ button, input, select, textarea {
     }
 
     .video-nav {
-        bottom: 2rem;
+        bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
         padding: 0.75rem;
         gap: 0.5rem;
     }
@@ -1613,7 +1614,6 @@ button, input, select, textarea {
     .contact-card {
         padding: 20px;
     }
-
     .contact-icon {
         width: 50px;
         height: 50px;
@@ -1907,7 +1907,6 @@ button, input, select, textarea {
         padding: 2rem;
         max-width: 400px;
     }
-
     .construction-icon {
         width: 80px;
         height: 80px;
