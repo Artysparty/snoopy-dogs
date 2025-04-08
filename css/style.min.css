@@ -133,6 +133,9 @@ button, input, select, textarea {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .header.visible {
@@ -144,7 +147,10 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    height: auto;
+    width: 100%;
+    padding: 0 1.5rem;
+    max-width: 1200px;
 }
 
 .header-logo {
@@ -608,36 +614,79 @@ button, input, select, textarea {
 /* Стили для карточек услуг */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
 }
 
 .service-card {
     background: #FFFFFF;
-    border-radius: 15px;
-    padding: 1.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(146, 137, 241, 0.15);
+    box-shadow: 0 8px 25px rgba(146, 137, 241, 0.2);
 }
 
-.service-card-icon {
+.service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-details {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.service-icon {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 35px;
-    height: 35px;
-    color: #9289F1;
-    opacity: 0.8;
+    top: -25px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #9289F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(146, 137, 241, 0.3);
+}
+
+.service-details h3 {
+    font-size: 1.2rem;
+    color: #2C2A38;
+    margin-bottom: 1rem;
+    padding-right: 60px;
+}
+
+.service-details p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.service-details .btn {
+    width: 100%;
+    text-align: center;
 }
 
 .service-card-title {
@@ -678,19 +727,22 @@ button, input, select, textarea {
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 1rem;
+        gap: 1.5rem;
+        margin: 2rem 0;
     }
 
-    .service-card {
+    .service-image {
+        height: 180px;
+    }
+
+    .service-details {
         padding: 1.25rem;
     }
 
-    .service-card-icon {
-        width: 30px;
-        height: 30px;
-        top: 1.25rem;
-        right: 1.25rem;
+    .service-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
 }
 
@@ -1071,6 +1123,43 @@ button, input, select, textarea {
     
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page section:first-of-type,
+    .portfolio-page section:first-of-type,
+    .services-page section:first-of-type,
+    .contacts-page section:first-of-type {
+        margin-top: 60px;
+    }
+
+    .under-construction {
+        margin-top: 60px;
+    }
+
+    .services-title {
+        margin-top: 60px;
+    }
+
+    .contacts-title {
+        margin-top: 60px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .about-page .header,
+    .portfolio-page .header,
+    .services-page .header,
+    .contacts-page .header {
+        height: 60px;
+    }
+
+    .header-nav {
+        padding-top: 60px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -1741,4 +1830,175 @@ button, input, select, textarea {
 .service-category.hidden {
   display: none;
   opacity: 0;
+}
+
+/* Стили для страниц в разработке */
+.under-construction {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f1eaff 0%, #ffffff 100%);
+    padding: 2rem;
+    margin-top: 80px;
+}
+
+.construction-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(146, 137, 241, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.construction-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #B5B0F8, #9289F1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 20px rgba(146, 137, 241, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.construction-content h1 {
+    font-size: 2rem;
+    color: #2C2A38;
+    margin-bottom: 0.75rem;
+}
+
+.construction-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.construction-details {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.construction-details i {
+    font-size: 1.75rem;
+    color: #9289F1;
+    opacity: 0.8;
+    animation: float 3s infinite;
+}
+
+@media (max-width: 768px) {
+    .under-construction {
+        min-height: 50vh;
+        padding: 1rem;
+        margin-top: 60px;
+    }
+
+    .construction-content {
+        padding: 2rem;
+        max-width: 400px;
+    }
+
+    .construction-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .construction-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .construction-content p {
+        font-size: 1rem;
+    }
+
+    .construction-details {
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .construction-details i {
+        font-size: 1.5rem;
+    }
+}
+
+.about-page .header,
+.portfolio-page .header {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.construction-details i:nth-child(1) { animation-delay: 0s; }
+.construction-details i:nth-child(2) { animation-delay: 0.5s; }
+.construction-details i:nth-child(3) { animation-delay: 1s; }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Отступы для внутренних страниц */
+.about-page section:first-of-type,
+.portfolio-page section:first-of-type,
+.services-page section:first-of-type,
+.contacts-page section:first-of-type {
+    margin-top: 80px;
+}
+
+.about-page .header,
+.portfolio-page .header {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+@media (max-width: 992px) {
+    .header {
+        height: 60px;
+    }
+
+    .about-page .header,
+    .portfolio-page .header,
+    .services-page .header,
+    .contacts-page .header {
+        height: 60px;
+    }
+
+    .header-nav {
+        padding-top: 60px;
+    }
 }

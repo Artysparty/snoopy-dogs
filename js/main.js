@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById('map')) {
         ymaps.ready(function () {
             const map = new ymaps.Map('map', {
-                center: [55.76, 37.64],
+                center: [55.942219, 37.870212],
                 zoom: 12,
                 controls: ['zoomControl', 'fullscreenControl']
             }, {
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 'multiTouch'
             ]);
 
-            const placemark = new ymaps.Placemark([55.76, 37.64], {
+            const placemark = new ymaps.Placemark([55.942219, 37.870212], {
                 balloonContent: 'Адрес салона'
             }, {
                 preset: 'islands#violetIcon'
