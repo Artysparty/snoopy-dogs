@@ -44,11 +44,11 @@
     <div class="menu-overlay"></div>
 
     <header class="header">
-      <div class="header-content">
+      <div class="header-content container">
         <div class="header-logo">
           <a href="index.html">
-            <i class="fas fa-paw"></i>
-            <span>Snoopy Dogs</span>
+            <i class="fas fa-dog"></i>
+            Snoopy Dogs
           </a>
         </div>
         
@@ -69,76 +69,78 @@
     </header>
 
     <main>
-      <h2 class="section-title contacts-title">Контакты</h2>
-
-      <!-- Секция с картой -->
-      <section class="map-section">
-        <div id="map" class="map-container"></div>
-      </section>
-      <!-- Секция контактов -->
-      <section class="section contacts-section">
+      <section class="contacts-section">
         <div class="container">
-          <div class="contacts-grid">
-            <div class="contacts-info">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-details">
-                  <h3>Адрес</h3>
-                  <p>ул. Пушистая, д. 15, г. Москва</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-details">
-                  <h3>Телефон</h3>
-                  <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-details">
-                  <h3>Email</h3>
-                  <p><a href="mailto:info@snoopydogs.ru">info@snoopydogs.ru</a></p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <div class="contact-details">
-                  <h3>Режим работы</h3>
-                  <p>Пн-Пт: 10:00 - 20:00</p>
-                  <p>Сб-Вс: 10:00 - 18:00</p>
-                </div>
-              </div>
-            </div>
-
+          <h1 class="section-title contacts-title">Наши контакты</h1>
+          
+          <div class="contacts-wrapper">
+            <!-- Форма обратной связи -->
             <div class="contacts-form">
-              <h3>Обратная связь</h3>
-              <form id="contactForm" class="contact-form">
+              <h3>Напишите нам</h3>
+              <form class="contact-form">
                 <div class="form-group">
-                  <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                  <input type="text" placeholder="Ваше имя" required>
                 </div>
                 <div class="form-group">
-                  <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                  <input type="tel" placeholder="Телефон" required>
                 </div>
                 <div class="form-group">
-                  <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
+                  <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                  <textarea placeholder="Ваше сообщение" required></textarea>
                 </div>
                 <button type="submit" class="btn">Отправить</button>
               </form>
-              <div id="formSuccess" class="form-success">
+              <div class="form-success">
                 <i class="fas fa-check-circle"></i>
-                <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+                <p>Спасибо! Ваше сообщение отправлено.</p>
+              </div>
+            </div>
+
+            <!-- Карта -->
+            <div id="map" class="map-container"></div>
+          </div>
+
+          <!-- Контактная информация -->
+          <div class="contacts-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Адрес</h3>
+                <p>Московская область, Королёв, микрорайон Первомайский, улица Советская, 47</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Телефон</h3>
+                <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="far fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Режим работы</h3>
+                <p>Ежедневно с 10:00 до 20:00</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p><a href="mailto:info@snoopydogs.ru">info@snoopydogs.ru</a></p>
               </div>
             </div>
           </div>
