@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Услуги - Snoopy Dogs</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="services-page">
+    <div class="menu-overlay"></div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <a href="index.html">
+              <i class="fas fa-paw"></i>
+              <span>Snoopy Dogs</span>
+            </a>
+          </div>
+          
+          <nav class="header-nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+              <li class="nav-item"><a href="services.html" class="nav-link active">Услуги</a></li>
+              <li class="nav-item"><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+              <li class="nav-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-burger">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section services-section">
+        <div class="container">
+          <h2 class="section-title services-title">Наши услуги</h2>
+          
+          <div class="services-filter">
+            <button class="filter-btn active" data-category="all">Все услуги</button>
+            <button class="filter-btn" data-category="decorative">Декоративные породы</button>
+            <button class="filter-btn" data-category="medium">Средние породы</button>
+            <button class="filter-btn" data-category="large">Крупные породы</button>
+            <button class="filter-btn" data-category="trimming">Тримминг</button>
+            <button class="filter-btn" data-category="cats">Кошки</button>
+          </div>
+
+          <div class="search-container">
+            <input type="text" id="breed-search" placeholder="Поиск по породе..." class="search-input">
+            <div id="no-results" class="no-results" style="display: none;">
+              <p>По вашему запросу ничего не найдено</p>
+            </div>
+          </div>
+
+          <div class="services-list">
+            <!-- Кошки -->
+            <div class="service-category" data-category="cats">
+              <h3 class="category-title">Услуги для кошек</h3>
+              <ul class="service-items">
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-brush"></i>
+                    <span>Вычесывание кошки (до часа)</span>
+                  </div>
+                  <div class="service-price">2300 - 2700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-brush"></i>
+                    <span>Вычесывание мейн-куна (до часа)</span>
+                  </div>
+                  <div class="service-price">2600 - 3100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-bath"></i>
+                    <span>Вычесывание и мытье кошки</span>
+                  </div>
+                  <div class="service-price">3000 - 4000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-bath"></i>
+                    <span>Вычесывание и мытье мейн-куна</span>
+                  </div>
+                  <div class="service-price">3500 - 4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Стрижка кошки</span>
+                  </div>
+                  <div class="service-price">2900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Стрижка и мытье кошки</span>
+                  </div>
+                  <div class="service-price">3500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-star"></i>
+                    <span>Люкс для кошки</span>
+                  </div>
+                  <div class="service-description">Полное обезжиривание шерсти, вычесывание, мытье, стрижка когтей</div>
+                  <div class="service-price">4000 - 5000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-star"></i>
+                    <span>Люкс для мейн-куна</span>
+                  </div>
+                  <div class="service-description">Полное обезжиривание шерсти, вычесывание, мытье, стрижка когтей</div>
+                  <div class="service-price">4500 - 5500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-soap"></i>
+                    <span>Обезжиривание одной зоны</span>
+                  </div>
+                  <div class="service-price">500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Подстригание когтей</span>
+                  </div>
+                  <div class="service-price">400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Тримминг -->
+            <div class="service-category" data-category="trimming">
+              <h3 class="category-title">Тримминг</h3>
+              <ul class="service-items">
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Аффен-пинчер / Грифон</span>
+                  </div>
+                  <div class="service-price">4000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Американский кокер спаниель</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Английский кокер спаниель</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бордер терьер</span>
+                  </div>
+                  <div class="service-price">4600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Вельш-терьер</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Вест хайленд уайт терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Денди Даймонд терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Джек рассел терьер</span>
+                  </div>
+                  <div class="service-price">4000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ирландский терьер</span>
+                  </div>
+                  <div class="service-price">5800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Керн терьер</span>
+                  </div>
+                  <div class="service-price">4600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Лейкленд терьер</span>
+                  </div>
+                  <div class="service-price">5800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Миттельшнауцер</span>
+                  </div>
+                  <div class="service-price">5900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Норвич терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Норфолк терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Силихем терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Скотч-терьер</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Такса стандартная 7-9 кг</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Такса миниатюрная 4-7 кг</span>
+                  </div>
+                  <div class="service-price">4800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Такса кроличья до 3,5 кг</span>
+                  </div>
+                  <div class="service-price">4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Фокс терьер</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Цвергшнауцер</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Дратхаар</span>
+                  </div>
+                  <div class="service-price">6500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ирландский волкодав</span>
+                  </div>
+                  <div class="service-price">9500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ризеншнауцер</span>
+                  </div>
+                  <div class="service-price">8000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Эрдельтерьер</span>
+                  </div>
+                  <div class="service-price">7000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Пшеничный терьер</span>
+                  </div>
+                  <div class="service-price">5600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Крупные породы -->
+            <div class="service-category" data-category="large">
+              <h3 class="category-title">Крупные породы</h3>
+              <ul class="service-items">
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Акита Ину</span>
+                  </div>
+                  <div class="service-price">от 5000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Английский сеттер</span>
+                  </div>
+                  <div class="service-price">5100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Английский бульдог</span>
+                  </div>
+                  <div class="service-price">4100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Американский бульдог</span>
+                  </div>
+                  <div class="service-price">4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Афганская борзая</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бассет-хаунд</span>
+                  </div>
+                  <div class="service-price">4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бельгийская овчарка</span>
+                  </div>
+                  <div class="service-price">5600 - 6600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бернский зенненхунд</span>
+                  </div>
+                  <div class="service-price">7100 - 9100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бигль</span>
+                  </div>
+                  <div class="service-price">3700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бладхаунд</span>
+                  </div>
+                  <div class="service-price">5300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бобтейл, Бриар</span>
+                  </div>
+                  <div class="service-price">6600 - 8600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Боксер</span>
+                  </div>
+                  <div class="service-price">4400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бордер колли</span>
+                  </div>
+                  <div class="service-price">4500 - 5500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бордосский дог</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бувье</span>
+                  </div>
+                  <div class="service-price">5600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бультерьер</span>
+                  </div>
+                  <div class="service-price">3800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бульмастиф</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Восточно-европейская овчарка</span>
+                  </div>
+                  <div class="service-price">5400 - 6400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Грейхаунд</span>
+                  </div>
+                  <div class="service-price">4300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Далматин</span>
+                  </div>
+                  <div class="service-price">4100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Доберман</span>
+                  </div>
+                  <div class="service-price">4600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Дратхаар</span>
+                  </div>
+                  <div class="service-price">4600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Испанский мастиф</span>
+                  </div>
+                  <div class="service-price">5500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Кавказская овчарка</span>
+                  </div>
+                  <div class="service-price">8500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Керри-блю-терьер</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Курцхаар</span>
+                  </div>
+                  <div class="service-price">4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Лабрадор</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Лабродудель</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Самоед</span>
+                  </div>
+                  <div class="service-price">6800 - 8800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Мастино-наполетано</span>
+                  </div>
+                  <div class="service-price">5900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Маламут</span>
+                  </div>
+                  <div class="service-price">6900 - 7900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Метис (от 15 кг)</span>
+                  </div>
+                  <div class="service-price">5200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Немецкая овчарка</span>
+                  </div>
+                  <div class="service-price">от 5600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ньюфаундленд</span>
+                  </div>
+                  <div class="service-price">7900 - 10400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ретривер</span>
+                  </div>
+                  <div class="service-price">5600 - 6600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ризеншнауцер модельно</span>
+                  </div>
+                  <div class="service-price">5900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Тайский Риджбек</span>
+                  </div>
+                  <div class="service-price">4600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ротвейлер</span>
+                  </div>
+                  <div class="service-price">5600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Русская борзая</span>
+                  </div>
+                  <div class="service-price">4900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Русский черный терьер</span>
+                  </div>
+                  <div class="service-price">7900 - 10400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Салюки</span>
+                  </div>
+                  <div class="service-price">4200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Среднеазиатская овчарка / Алабай</span>
+                  </div>
+                  <div class="service-price">7500 - 9500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Хаски / Лайка</span>
+                  </div>
+                  <div class="service-price">5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Шарпей</span>
+                  </div>
+                  <div class="service-price">3900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Эрдельтерьер</span>
+                  </div>
+                  <div class="service-price">5500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Средние породы -->
+            <div class="service-category" data-category="medium">
+              <h3 class="category-title">Средние породы</h3>
+              <ul class="service-items">
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бедлингтон</span>
+                  </div>
+                  <div class="service-price">3900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бесенджи</span>
+                  </div>
+                  <div class="service-price">3200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Вельш-корги</span>
+                  </div>
+                  <div class="service-price">3400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Вест хайленд уайт терьер</span>
+                  </div>
+                  <div class="service-price">3700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Денди Даймонд терьер</span>
+                  </div>
+                  <div class="service-price">3600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Джек рассел терьер</span>
+                  </div>
+                  <div class="service-price">3100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Кеесхонд (Немецкий вольфшпиц)</span>
+                  </div>
+                  <div class="service-price">4500 - 6500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Лейкленд терьер</span>
+                  </div>
+                  <div class="service-price">4000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Мальтипу</span>
+                  </div>
+                  <div class="service-price">от 3700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Метисы (5-15 кг)</span>
+                  </div>
+                  <div class="service-price">3800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Миттельшнауцер</span>
+                  </div>
+                  <div class="service-price">4500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Миниатюрный пудель</span>
+                  </div>
+                  <div class="service-price">4000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Малый пудель</span>
+                  </div>
+                  <div class="service-price">4400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Русский спаниель</span>
+                  </div>
+                  <div class="service-price">3900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Сиба Ину</span>
+                  </div>
+                  <div class="service-price">3400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Силихем терьер</span>
+                  </div>
+                  <div class="service-price">3900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Скай терьер</span>
+                  </div>
+                  <div class="service-price">3900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Спаниель Кавалер Кинг Чарльз</span>
+                  </div>
+                  <div class="service-price">3300 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Спрингер спаниель</span>
+                  </div>
+                  <div class="service-price">3400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Тибетский терьер</span>
+                  </div>
+                  <div class="service-price">3800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Французский бульдог</span>
+                  </div>
+                  <div class="service-price">3100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Цвергшнауцер</span>
+                  </div>
+                  <div class="service-price">3800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Шелти</span>
+                  </div>
+                  <div class="service-price">4400 - 5400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Декоративные породы -->
+            <div class="service-category" data-category="decorative">
+              <h3 class="category-title">Декоративные породы</h3>
+              <ul class="service-items">
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Аффен-пинчер / Грифон</span>
+                  </div>
+                  <div class="service-price">3000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бишон Фризе</span>
+                  </div>
+                  <div class="service-price">4100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Болоньез</span>
+                  </div>
+                  <div class="service-price">3000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Бивер-йорк</span>
+                  </div>
+                  <div class="service-price">3000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Йоркширский терьер</span>
+                  </div>
+                  <div class="service-price">3000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Китайская хохлатая голая</span>
+                  </div>
+                  <div class="service-price">2800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Китайская хохлатая пуховка</span>
+                  </div>
+                  <div class="service-price">3200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Лхасский апсо</span>
+                  </div>
+                  <div class="service-price">3700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Мальтийская болонка</span>
+                  </div>
+                  <div class="service-price">3200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Метис до 5 кг</span>
+                  </div>
+                  <div class="service-price">3000 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Метис больше 5 кг</span>
+                  </div>
+                  <div class="service-price">3800 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Московский дракон</span>
+                  </div>
+                  <div class="service-price">2700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Мопс</span>
+                  </div>
+                  <div class="service-price">2600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Папильон</span>
+                  </div>
+                  <div class="service-price">2900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Пекинес</span>
+                  </div>
+                  <div class="service-price">3200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Пти-брабансон</span>
+                  </div>
+                  <div class="service-price">2700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Русская цветная болонка</span>
+                  </div>
+                  <div class="service-price">3200 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Той-пудель</span>
+                  </div>
+                  <div class="service-price">3400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Той-терьер</span>
+                  </div>
+                  <div class="service-price">2500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Чихуа-хуа гладкошерстный</span>
+                  </div>
+                  <div class="service-price">2500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Чихуа-хуа длинношерстный</span>
+                  </div>
+                  <div class="service-price">2700 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Ши-тцу</span>
+                  </div>
+                  <div class="service-price">3500 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Шпиц померанский (до 22 см)</span>
+                  </div>
+                  <div class="service-price">3100 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Шпиц малый (от 23 до 29 см)</span>
+                  </div>
+                  <div class="service-price">3400 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Шпиц средний (свыше 30 см)</span>
+                  </div>
+                  <div class="service-price">3600 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+                <li class="service-item">
+                  <div class="service-name">
+                    <i class="fas fa-cut"></i>
+                    <span>Японский хин</span>
+                  </div>
+                  <div class="service-price">2900 ₽</div>
+                  <a href="contacts.html" class="btn btn-sm">Записаться</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <h3><i class="fas fa-paw"></i> Snoopy Dogs</h3>
+            </div>
+            <p>Профессиональный груминг для ваших любимых питомцев</p>
+          </div>
+          <div class="footer-col">
+            <h4>Меню</h4>
+            <ul class="footer-menu">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="portfolio.html">Портфолио</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> ул. Пушистая, д. 15, г.
+                Москва
+              </p>
+              <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+              <p><i class="fas fa-envelope"></i> info@snoopydogs.ru</p>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Социальные сети</h4>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html> 
