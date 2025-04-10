@@ -599,9 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <i class="fas fa-${item.icon}"></i>
           <span>${item.name}</span>
         </div>
-        ${item.description ? `<div class="service-description">${item.description}</div>` : ''}
         <div class="service-price">${item.price} ₽</div>
-        <a href="contacts.html" class="btn btn-sm">Записаться</a>
       </li>
     `;
   }
@@ -626,6 +624,50 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `;
         servicesList.innerHTML += categoryHtml;
+      }
+    });
+
+    // Добавляем обработчики событий для модального окна после рендеринга
+    const serviceItems = document.querySelectorAll('.service-item');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const modalClose = document.querySelector('.modal-close');
+    const modalForm = document.querySelector('.modal-form');
+    const formSuccess = document.querySelector('.form-success');
+
+    serviceItems.forEach(item => {
+      item.addEventListener('click', () => {
+        modalOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        modalForm.style.display = 'block';
+        formSuccess.style.display = 'none';
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      modalForm.reset();
+      modalForm.style.display = 'block';
+      formSuccess.style.display = 'none';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        modalForm.reset();
+        modalForm.style.display = 'block';
+        formSuccess.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        modalForm.reset();
+        modalForm.style.display = 'block';
+        formSuccess.style.display = 'none';
       }
     });
   }
@@ -732,4 +774,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Добавляем обработчик изменения размера окна
   window.addEventListener('resize', initWelcomeIcons);
+
+  // Модальное окно
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalClose = document.querySelector('.modal-close');
+  const serviceItems = document.querySelectorAll('.service-item');
+  const modalForm = document.querySelector('.modal-form');
+  const formSuccess = document.querySelector('.form-success');
+
+  // Обработка отправки формы
+  modalForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Здесь можно добавить валидацию формы
+      const formData = new FormData(modalForm);
+      
+      // Показываем сообщение сразу
+      modalForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+      
+      // Закрываем модальное окно через 3 секунды
+      setTimeout(() => {
+          modalForm.reset();
+          modalForm.style.display = 'block';
+          formSuccess.style.display = 'none';
+          modalOverlay.style.display = 'none';
+          document.body.style.overflow = 'auto';
+      }, 3000);
+  });
+
+  // Открытие модального окна при клике на карточку услуги
+  serviceItems.forEach(item => {
+      item.addEventListener('click', () => {
+          modalOverlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          modalForm.style.display = 'block';
+          formSuccess.style.display = 'none';
+      });
+  });
+
+  // Закрытие модального окна
+  modalClose.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      modalForm.reset();
+      modalForm.style.display = 'block';
+      formSuccess.style.display = 'none';
+  });
+
+  // Закрытие модального окна при клике вне его области
+  modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+          modalOverlay.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          modalForm.reset();
+          modalForm.style.display = 'block';
+          formSuccess.style.display = 'none';
+      }
+  });
+
+  // Закрытие модального окна при нажатии клавиши Escape
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+          modalOverlay.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          modalForm.reset();
+          modalForm.style.display = 'block';
+          formSuccess.style.display = 'none';
+      }
+  });
 });
