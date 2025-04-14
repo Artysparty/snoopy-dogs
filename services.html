@@ -88,15 +88,15 @@
           <div class="footer-col">
             <h4>Контакты</h4>
             <div class="contacts-info">
-              <a href="tel:+79104491323" class="contact-link"><i class="fas fa-phone"></i>+7 (910) 449-13-23</a>
-              <a href="https://t.me/Any_fruit" class="contact-link"><i class="fab fa-telegram"></i>@Any_fruit</a>
-              <a href="https://wa.me/79104491323" class="contact-link"><i class="fab fa-whatsapp"></i>+7 (910) 449-13-23</a>
+              <a href="tel:+79104491323" class="contact-link" target="_blank"><i class="fas fa-phone"></i>+7 (910) 449-13-23</a>
+              <a href="https://t.me/Any_fruit" class="contact-link" target="_blank"><i class="fab fa-telegram"></i>@Any_fruit</a>
+              <a href="https://wa.me/79104491323" class="contact-link" target="_blank"><i class="fab fa-whatsapp"></i>+7 (910) 449-13-23</a>
               <a href="https://yandex.ru/maps/-/CHVWEPLY" target="_blank" class="contact-link"><i class="fas fa-map-marker-alt"></i>Московская область, Королёв, микрорайон Первомайский, улица Советская, 47</a>
             </div>
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2023 Салон груминга "Snoopy Dogs". Все права защищены.</p>
+          <p>&copy; 2025 Салон груминга "Snoopy Dogs". Все права защищены.</p>
         </div>
       </div>
     </footer>
@@ -106,20 +106,49 @@
             <span class="modal-close">&times;</span>
             <h3 class="modal-title">Записаться на услугу</h3>
             <div class="contacts-info contacts-card">
-              <a href="tel:+79104491323" class="contact-link"><i class="fas fa-phone"></i>+7 (910) 449-13-23</a>
-              <a href="mailto:info@snoopydogs.ru" class="contact-link"><i class="fas fa-envelope"></i>info@snoopydogs.ru</a>
-              <a href="https://yandex.ru/maps/-/CHVWEPLY" target="_blank" class="contact-link"><i class="fas fa-map-marker-alt"></i>Московская область, Королёв, микрорайон Первомайский, улица Советская, 47</a>
+              <div class="contact-card phone">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <a href="tel:+79104491323" class="contact-link" target="_blank">+7 (910) 449-13-23</a>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fab fa-telegram"></i>
+                </div>
+                <div class="contact-details">
+                  <a href="https://t.me/Any_fruit" class="contact-link" target="_blank">@Any_fruit</a>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <a href="https://wa.me/79104491323" class="contact-link" target="_blank">+7 (910) 449-13-23</a>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <a href="https://yandex.ru/maps/-/CHVWEPLY" target="_blank" class="contact-link">Московская область, Королёв, микрорайон Первомайский, улица Советская, 47</a>
+                </div>
+              </div>
             </div>
             <p class="modal-text">Свяжитесь с нами любым удобным способом или заполните форму ниже</p>
             <form class="modal-form">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                    <input type="tel" name="phone" placeholder="Ваш телефон" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Сообщение (необязательно)"></textarea>
+                    <textarea name="message" placeholder="Сообщение (необязательно)"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Отправить</button>
             </form>
@@ -136,5 +165,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/formInit.js"></script>
   </body>
 </html> 

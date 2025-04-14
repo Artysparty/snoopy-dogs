@@ -195,7 +195,6 @@ button, input, select, textarea {
 
 .btn:hover {
     background-color: #655BBE;
-    transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(146, 137, 241, 0.4);
 }
 
@@ -486,7 +485,7 @@ button, input, select, textarea {
 }
 
 .video-nav-item:hover {
-    transform: translateY(-3px);
+    /* Убираем трансформацию */
 }
 
 .video-nav-item:hover::after {
@@ -510,7 +509,6 @@ button, input, select, textarea {
 
 .video-nav-btn:hover {
     background-color: #B5B2FF;
-    transform: translateY(-3px);
 }
 
 /* Секция приветствия */
@@ -535,8 +533,6 @@ button, input, select, textarea {
     position: absolute;
     color: rgba(146, 137, 241, 0.15);
     font-size: 35px;
-    transform-origin: center;
-    transition: transform 0.3s ease;
 }
 
 .welcome-icons-container i:nth-child(1) { top: 5%; left: 5%; transform: rotate(15deg); }
@@ -614,7 +610,7 @@ button, input, select, textarea {
 }
 
 .welcome-image img:hover {
-    transform: scale(1.02);
+    /* Убираю трансформацию */
 }
 
 @media (max-width: 992px) {
@@ -696,7 +692,6 @@ button, input, select, textarea {
 }
 
 .tip-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(146, 137, 241, 0.15);
     background: rgba(255, 255, 255, 0.95);
 }
@@ -782,11 +777,13 @@ button, input, select, textarea {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(146, 137, 241, 0.2);
 }
 
@@ -800,15 +797,13 @@ button, input, select, textarea {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-image img {
-    transform: scale(1.05);
 }
 
 .service-details {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     position: relative;
 }
 
@@ -843,6 +838,8 @@ button, input, select, textarea {
 }
 
 .service-details .btn {
+    margin-top: auto;
+    align-self: flex-start;
     width: 100%;
     text-align: center;
 }
@@ -906,9 +903,6 @@ button, input, select, textarea {
 
 .service-category {
     margin-bottom: 3rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding: 2rem;
     opacity: 0;
     display: none;
@@ -1041,7 +1035,6 @@ button, input, select, textarea {
 
 .cta-content .btn:hover {
     background-color: #F8F6FF;
-    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -1145,7 +1138,6 @@ button, input, select, textarea {
 
 .social-link:hover {
     background-color: #9289F1;
-    transform: translateY(-3px);
 }
 
 .copyright {
@@ -1591,15 +1583,8 @@ button, input, select, textarea {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.services-list {
-  margin-top: 2rem;
-}
-
 .service-category {
   margin-bottom: 3rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 2rem;
   opacity: 0;
   display: none;
@@ -1645,7 +1630,6 @@ button, input, select, textarea {
 }
 
 .service-item:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -1739,16 +1723,6 @@ button, input, select, textarea {
   font-size: var(--font-size-h5);
   line-height: var(--line-height-h5);
   margin: 0;
-}
-
-.service-category {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.service-category.hidden {
-  display: none;
-  opacity: 0;
 }
 
 /* Стили для страниц в разработке */
@@ -2098,10 +2072,33 @@ button, input, select, textarea {
     background: #fff;
     padding: 2rem;
     border-radius: 20px;
+    position: relative;
     max-width: 500px;
     width: 90%;
-    position: relative;
-    animation: modalFadeIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 2rem auto;
+    scrollbar-gutter: stable;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+    margin: 15px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #9289F1;
+    border-radius: 4px;
+    border: 1px solid #fff;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #655BBE;
 }
 
 .modal-close {
@@ -2120,15 +2117,15 @@ button, input, select, textarea {
 
 .modal-title {
     font-size: var(--font-size-h3);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
 .modal-text {
     text-align: center;
     color: #666;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -2150,7 +2147,6 @@ button, input, select, textarea {
 .modal-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
 }
 
 .modal-form .form-group {
@@ -2212,19 +2208,18 @@ button, input, select, textarea {
     }
 }
 
-.contact-link:hover {
-    color: #f1e1ff;
-    transform: scale(1.05);
+.contact-link {
+    transition: color 0.3s ease;
 }
 
-.contact-link {
-    transition: all 0.3s ease;
+.contact-link:hover {
+    color: #f1e1ff;
 }
 
 .modal-text {
     text-align: center;
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -2256,4 +2251,131 @@ button, input, select, textarea {
     .modal-text {
         font-size: 0.9rem;
     }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer .contacts-info {
+        align-items: center;
+    }
+    
+    .footer-menu {
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Стили для контактных карточек в модальном окне и на странице контактов */
+.modal-content .contact-card,
+.contacts-section .contact-card {
+    background: #f8f9ff;
+    border-radius: 15px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-content .contact-card.phone,
+.contacts-section .contact-card.phone {
+    background: #f1eaff;
+    border: 2px solid #9289F1;
+    position: relative;
+}
+
+.modal-content .contact-card.phone::before,
+.contacts-section .contact-card.phone::before {
+    content: 'Рекомендуемый способ связи';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #9289F1;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.modal-content .contact-icon,
+.contacts-section .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modal-content .contact-card.phone .contact-icon,
+.contacts-section .contact-card.phone .contact-icon {
+    background: #9289F1;
+    color: white;
+}
+
+.modal-content .contact-details,
+.contacts-section .contact-details {
+    flex: 1;
+}
+
+.modal-content .contact-details a,
+.contacts-section .contact-details a {
+    color: #2C2A38;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.modal-content .contact-card.phone .contact-details a,
+.contacts-section .contact-card.phone .contact-details a {
+    color: #655BBE;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .modal-content .contact-card.phone::before,
+    .contacts-section .contact-card.phone::before {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+/* Стили для контактной информации в футере */
+.footer .contacts-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer .contacts-info a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.footer .contacts-info a:hover {
+    color: #f1e1ff;
+}
+
+.footer .contacts-info i {
+    width: 20px;
+    text-align: center;
 }
