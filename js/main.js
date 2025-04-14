@@ -676,28 +676,30 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    searchContainer.style.display = "block";
+    if (searchContainer) {
+      searchContainer.style.display = "block";
 
-    const searchInput = document.getElementById("breed-search");
-    let searchTimeout;
-
-    searchInput.addEventListener("input", (e) => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        const query = e.target.value;
-        if (query) {
-          // Показываем все категории перед поиском
-          renderServices();
-          searchServices(query);
-        } else {
-          // Если поле поиска пустое, показываем текущую активную категорию
-          const activeCategory =
-            document.querySelector(".filter-btn.active").dataset.category;
-          renderServices(activeCategory);
-          document.getElementById("no-results").style.display = "none";
-        }
-      }, 300);
-    });
+      const searchInput = document.getElementById("breed-search");
+      let searchTimeout;
+  
+      searchInput.addEventListener("input", (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          const query = e.target.value;
+          if (query) {
+            // Показываем все категории перед поиском
+            renderServices();
+            searchServices(query);
+          } else {
+            // Если поле поиска пустое, показываем текущую активную категорию
+            const activeCategory =
+              document.querySelector(".filter-btn.active").dataset.category;
+            renderServices(activeCategory);
+            document.getElementById("no-results").style.display = "none";
+          }
+        }, 300);
+      });
+    }
   }
 
   // Инициализация всех функций
@@ -895,7 +897,7 @@ class RateLimiter {
 
 const TELEGRAM_CONFIG = {
   BOT_TOKEN: "7685362973:AAFTszNQyawQ8dZvf7joA4EFVvQecSSd7pI",
-  CHAT_ID: "377833548",
+  CHAT_ID: "1369258684",
   RATE_LIMIT_MS: 30000,
   MAX_MESSAGES_PER_SESSION: 5,
 };
