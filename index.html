@@ -80,10 +80,13 @@
 
     <main>
       <section class="video-hero">
-        <video class="video-background" autoplay muted loop playsinline>
+        <video class="video-background video-desktop" autoplay muted loop playsinline>
           <source src="img/video/main-vid.mp4" type="video/mp4" />
-          <img src="img/hero-fallback.jpg" alt="Фоновое изображение" />
         </video>
+        <video class="video-background video-mobile" autoplay muted loop playsinline>
+          <source src="img/video/main_vid_mobile.mp4" type="video/mp4" />
+        </video>
+        <img class="video-fallback" src="img/hero-fallback.jpg" alt="Фоновое изображение" />
 
         <div class="video-overlay"></div>
 

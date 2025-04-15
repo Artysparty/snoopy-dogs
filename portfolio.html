@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="portfolio-page">
+    <div class="menu-overlay"></div>
+
     <!-- Шапка сайта -->
     <header class="header">
         <div class="header-content">
             <div class="header-logo">
                 <a href="index.html">
                     <i class="fas fa-paw"></i>
-                    Snoopy Dogs
+                    <span>Snoopy Dogs</span>
                 </a>
             </div>
             <nav class="header-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Главная</a></li>
-                    <li><a href="about.html" class="nav-link">О нас</a></li>
-                    <li><a href="services.html" class="nav-link">Услуги</a></li>
-                    <li><a href="portfolio.html" class="nav-link active">Портфолио</a></li>
-                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Услуги</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link active">Портфолио</a></li>
+                    <li class="nav-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
                 </ul>
             </nav>
             <div class="header-burger">
@@ -34,20 +36,209 @@
 
     <!-- Основной контент -->
     <main>
-        <section class="under-construction">
+        <!-- Заголовок секции -->
+        <h2 class="section-title services-title">Наши работы</h2>
+
+        <!-- Фильтры портфолио -->
+        <section class="portfolio-section">
             <div class="container">
-                <div class="construction-content">
-                    <div class="construction-icon">
-                        <i class="fas fa-camera"></i>
+                <div class="services-filter">
+                    <button class="filter-btn active" data-filter="all">Все работы</button>
+                    <button class="filter-btn" data-filter="dogs">Собаки</button>
+                    <button class="filter-btn" data-filter="cats">Кошки</button>
+                    <button class="filter-btn" data-filter="before-after">До/После</button>
+                </div>
+
+                <!-- Галерея фотографий -->
+                <div class="portfolio-gallery">
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_8893.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Йоркширский терьер</h3>
+                                <p>Стрижка с сохранением формы</p>
+                            </div>
+                        </div>
                     </div>
-                    <h1>Страница в разработке</h1>
-                    <p>Скоро здесь будет красота</p>
-                    <div class="construction-details">
-                        <i class="fas fa-image"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-heart"></i>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_8887.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Шпиц</h3>
+                                <p>Модельная стрижка</p>
+                            </div>
+                        </div>
                     </div>
-                    <a href="index.html" class="btn">Вернуться на главную</a>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_8712.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Пудель</h3>
+                                <p>Креативная стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="cats">
+                        <img src="img/portfolio/IMG_8582.png" alt="Стрижка кошки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Персидская кошка</h3>
+                                <p>Полный груминг</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_8327.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Бишон фризе</h3>
+                                <p>Стандартная стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="before-after">
+                        <img src="img/portfolio/IMG_8161.png" alt="До и после">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>До и после</h3>
+                                <p>Результат комплексного ухода</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_7254.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Шпиц</h3>
+                                <p>Креативная стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="cats">
+                        <img src="img/portfolio/IMG_7251.png" alt="Стрижка кошки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Мейн-кун</h3>
+                                <p>Полный груминг</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="before-after">
+                        <img src="img/portfolio/IMG_7149.png" alt="До и после">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>До и после</h3>
+                                <p>Трансформация внешнего вида</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_4788.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ши-тцу</h3>
+                                <p>Гигиеническая стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_4371.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Йоркширский терьер</h3>
+                                <p>Модельная стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="cats">
+                        <img src="img/portfolio/IMG_3523.png" alt="Стрижка кошки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Британская кошка</h3>
+                                <p>Вычесывание</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_3138.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Пудель</h3>
+                                <p>Классическая стрижка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="before-after">
+                        <img src="img/portfolio/IMG_3118.png" alt="До и после">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>До и после</h3>
+                                <p>Результат работы со сложной шерстью</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="cats">
+                        <img src="img/portfolio/IMG_3096.png" alt="Стрижка кошки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Сфинкс</h3>
+                                <p>Уход за кожей</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="dogs">
+                        <img src="img/portfolio/IMG_2998.png" alt="Стрижка собаки">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Померанский шпиц</h3>
+                                <p>Полный груминг</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="before-after">
+                        <img src="img/portfolio/IMG_2712.png" alt="До и после">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>До и после</h3>
+                                <p>Яркая трансформация</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с призывом к действию -->
+        <section class="section cta-section">
+            <div class="falling-icons-container">
+                <i class="falling-icon fas fa-cut"></i>
+                <i class="falling-icon fas fa-soap"></i>
+                <i class="falling-icon fas fa-bath"></i>
+                <i class="falling-icon fas fa-tint"></i>
+                <i class="falling-icon fas fa-paw"></i>
+                <i class="falling-icon fas fa-scissors"></i>
+                <i class="falling-icon fas fa-spray-can"></i>
+                <i class="falling-icon fas fa-pump-soap"></i>
+                <i class="falling-icon fas fa-water"></i>
+                <i class="falling-icon fas fa-bone"></i>
+                <i class="falling-icon fas fa-cut"></i>
+                <i class="falling-icon fas fa-soap"></i>
+                <i class="falling-icon fas fa-shower"></i>
+                <i class="falling-icon fas fa-tint"></i>
+                <i class="falling-icon fas fa-dog"></i>
+                <i class="falling-icon fas fa-cat"></i>
+                <i class="falling-icon fas fa-heart"></i>
+                <i class="falling-icon fas fa-spray-can"></i>
+                <i class="falling-icon fas fa-water"></i>
+                <i class="falling-icon fas fa-paw"></i>
+            </div>
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Хотите такую же красоту своему питомцу?</h2>
+                    <p>Запишитесь на груминг прямо сейчас и подарите своему питомцу профессиональный уход</p>
+                </div>
+                <div class="tips-button-wrapper">
+                    <a href="contacts.html" class="btn btn-white">Записаться</a>
                 </div>
             </div>
         </section>
@@ -64,11 +255,11 @@
                     <p>Профессиональный груминг для ваших любимцев</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Навигация</h4>
+                    <h4>Меню</h4>
                     <ul class="footer-menu">
                         <li><a href="index.html">Главная</a></li>
-                        <li><a href="services.html">Услуги</a></li>
                         <li><a href="about.html">О нас</a></li>
+                        <li><a href="services.html">Услуги</a></li>
                         <li><a href="portfolio.html">Портфолио</a></li>
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>

@@ -148,10 +148,6 @@ button, input, select, textarea {
     padding: 0 1.5rem;
 }
 
-.section {
-    padding-bottom: 40px;
-}
-
 .section-title {
     font-size: var(--font-size-h2);
     line-height: var(--line-height-h2);
@@ -161,6 +157,7 @@ button, input, select, textarea {
     color: #2C2A38;
     font-weight: 600;
     letter-spacing: -0.5px;
+    text-align: center;
 }
 
 .section-title::after {
@@ -384,12 +381,11 @@ button, input, select, textarea {
     visibility: visible;
 }
 
-/* Видео секция */
+/* Видео на главном экране */
 .video-hero {
     position: relative;
-    height: 100dvh;
+    height: 100vh;
     min-height: 600px;
-    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -406,10 +402,30 @@ button, input, select, textarea {
     z-index: 1;
 }
 
+/* Показ видео для разных устройств */
+.video-desktop {
+    display: block;
+}
+
+.video-mobile {
+    display: none;
+}
+
+.video-fallback {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .video-overlay {
     position: absolute;
-        top: 0;
-        left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -424,7 +440,6 @@ button, input, select, textarea {
     padding: 0 20px;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: -10vh;
 }
 
 .video-title {
@@ -511,12 +526,39 @@ button, input, select, textarea {
     background-color: #B5B2FF;
 }
 
+/* Медиа-запросы для видео */
+@media (max-width: 768px) {
+    .video-desktop {
+        display: none;
+    }
+    
+    .video-mobile {
+        display: block;
+    }
+    
+    .video-hero {
+        height: 100vh;
+        min-height: 500px;
+    }
+    
+    .video-content {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-hero {
+        height: 100vh;
+        min-height: 450px;
+    }
+}
+
 /* Секция приветствия */
 .welcome-section {
     background-color: #f1eaff;
     position: relative;
     overflow: hidden;
-    padding: 4rem 0;
+    padding: 80px 0;
 }
 
 .welcome-icons-container {
@@ -769,7 +811,7 @@ button, input, select, textarea {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 40px 0;
 }
 
 .service-card {
@@ -883,7 +925,7 @@ button, input, select, textarea {
     .services-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        margin: 2rem 0;
+        margin: 25px 0;
     }
 
     .service-image {
@@ -940,102 +982,110 @@ button, input, select, textarea {
     border-radius: 2px;
 }
 
-/* CTA секция */
+/* CTA секция с падающими иконками */
 .cta-section {
-    position: relative;
-    background: linear-gradient(135deg, #655BBE, #9289F1);
-    padding: 100px 0;
-    overflow: hidden;
-}
-
-.falling-icons-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.falling-icon {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 24px;
-    animation: fall linear infinite;
-    top: -50px;
-}
-
-.falling-icon:nth-child(1) { left: 10%; animation-duration: 6s; animation-delay: 0s; }
-.falling-icon:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 0.2s; }
-.falling-icon:nth-child(3) { left: 30%; animation-duration: 7s; animation-delay: 0.4s; }
-.falling-icon:nth-child(4) { left: 40%; animation-duration: 9s; animation-delay: 0.6s; }
-.falling-icon:nth-child(5) { left: 50%; animation-duration: 6s; animation-delay: 0.8s; }
-.falling-icon:nth-child(6) { left: 60%; animation-duration: 8s; animation-delay: 1s; }
-.falling-icon:nth-child(7) { left: 70%; animation-duration: 7s; animation-delay: 1.2s; }
-.falling-icon:nth-child(8) { left: 80%; animation-duration: 9s; animation-delay: 1.4s; }
-.falling-icon:nth-child(9) { left: 90%; animation-duration: 6s; animation-delay: 1.6s; }
-.falling-icon:nth-child(10) { left: 15%; animation-duration: 8s; animation-delay: 1.8s; }
-.falling-icon:nth-child(11) { left: 25%; animation-duration: 7s; animation-delay: 2s; }
-.falling-icon:nth-child(12) { left: 35%; animation-duration: 9s; animation-delay: 2.2s; }
-.falling-icon:nth-child(13) { left: 45%; animation-duration: 6s; animation-delay: 2.4s; }
-.falling-icon:nth-child(14) { left: 55%; animation-duration: 8s; animation-delay: 2.6s; }
-.falling-icon:nth-child(15) { left: 65%; animation-duration: 7s; animation-delay: 2.8s; }
-.falling-icon:nth-child(16) { left: 75%; animation-duration: 9s; animation-delay: 3s; }
-.falling-icon:nth-child(17) { left: 85%; animation-duration: 6s; animation-delay: 3.2s; }
-.falling-icon:nth-child(18) { left: 95%; animation-duration: 8s; animation-delay: 3.4s; }
-.falling-icon:nth-child(19) { left: 5%; animation-duration: 7s; animation-delay: 3.6s; }
-.falling-icon:nth-child(20) { left: 15%; animation-duration: 9s; animation-delay: 3.8s; }
-
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    20% {
-        opacity: 0.5;
-    }
-    80% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(calc(100vh + 50px)) rotate(360deg);
-        opacity: 0;
-    }
+  position: relative;
+  background-color: #9289F1;
+  color: white;
+  padding: 80px 0;
+  overflow: hidden;
+  text-align: center;
 }
 
 .cta-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .cta-content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-section .btn-white {
+  background-color: white;
+  color: #9289F1;
+  border: 2px solid white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.cta-section .btn-white:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.falling-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.falling-icon {
+  position: absolute;
+  top: -50px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  animation: falling linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(2000%) rotate(calc(360deg * var(--rotation-direction, 1)));
+    opacity: 0;
+  }
+}
+
+/* Медиа-запросы для CTA секции */
+@media (max-width: 768px) {
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-section .btn-white {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  
+  .falling-icon {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
+  }
 }
 
-.cta-content .btn {
-    background-color: #FFFFFF;
-    color: #655BBE;
-    font-weight: 600;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.cta-content .btn:hover {
-    background-color: #F8F6FF;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+@media (max-width: 576px) {
+  .cta-content h2 {
+    font-size: 1.4rem;
+  }
 }
 
 /* Футер */
@@ -1159,8 +1209,91 @@ button, input, select, textarea {
 }
 
 .services-title {
-    margin-top: 80px;
+    margin-top: 100px;
     text-align: center;
+}
+
+.contacts-title,
+.services-title,
+.portfolio-title {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.contacts-wrapper {
+    margin-bottom: 40px;
+}
+
+.tips-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.services-filter {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+    .contacts-title,
+    .services-title,
+    .portfolio-title {
+        margin-top: 80px;
+    }
+    
+    .contacts-wrapper {
+        margin-bottom: 30px;
+    }
+    
+    .tips-container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .services-filter {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-title,
+    .services-title,
+    .portfolio-title {
+        margin-top: 80px;
+    }
+    
+    .contacts-wrapper {
+        margin-bottom: 25px;
+    }
+    
+    .tips-container {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .services-filter {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contacts-title,
+    .services-title,
+    .portfolio-title {
+        margin-top: 50px;
+    }
+    
+    .contacts-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .tips-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .services-filter {
+        margin-bottom: 20px;
+    }
 }
 
 /* Адаптивность */
@@ -1186,6 +1319,15 @@ button, input, select, textarea {
 }
 
 @media (max-width: 992px) {
+    .welcome-section,
+    .tips-section,
+    .cta-section,
+    .services-section,
+    .portfolio-section,
+    .contacts-section {
+        padding-bottom: 60px;
+    }
+    
     .section-title {
         font-size: 2.2rem;
         margin-bottom: 2.5rem;
@@ -1219,10 +1361,6 @@ button, input, select, textarea {
         padding: 0 2rem;
     }
     
-    .section {
-        padding: 2rem 0;
-    }
-
     .video-title {
         font-size: 3.5rem;
     }
@@ -1295,12 +1433,12 @@ button, input, select, textarea {
     }
 
     .services-title {
-        margin-top: 60px;
+        margin-top: 80px;
     text-align: center;
     }
 
     .contacts-title {
-        margin-top: 60px;
+        margin-top: 80px;
     }
 
     .header {
@@ -1323,8 +1461,17 @@ button, input, select, textarea {
 }
 
 @media (max-width: 768px) {
+    .welcome-section,
+    .tips-section,
+    .cta-section,
+    .services-section,
+    .portfolio-section,
+    .contacts-section {
+        padding-bottom: 40px;
+    }
+    
     .section-title {
-    font-size: 2rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
 
@@ -1451,6 +1598,15 @@ button, input, select, textarea {
 }
 
 @media (max-width: 576px) {
+    .welcome-section,
+    .tips-section,
+    .cta-section,
+    .services-section,
+    .portfolio-section,
+    .contacts-section {
+        padding-bottom: 30px;
+    }
+    
     .section-title {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
@@ -1490,10 +1646,6 @@ button, input, select, textarea {
     
     .container {
         padding: 0 2rem;
-    }
-    
-    .section {
-        padding: 1.5rem 0;
     }
     
     .services-grid {
@@ -1544,9 +1696,9 @@ button, input, select, textarea {
 }
 
 /* Секция контактов */
-.contacts-section {
+.contacts-section, .portfolio-section, .services-section {
     background-color: #FFFFFF;
-    padding: 2rem 0;
+    padding-bottom: 80px;
 }
 
 .contacts-title {
@@ -2378,4 +2530,194 @@ button, input, select, textarea {
 .footer .contacts-info i {
     width: 20px;
     text-align: center;
+}
+
+/* Портфолио стили */
+.portfolio-hero {
+  background-color: transparent;
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+.portfolio-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.portfolio-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.portfolio-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.portfolio-filter .filter-btn {
+  background: none;
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+  margin: 0 10px 10px;
+  border-radius: 30px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-filter .filter-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.portfolio-filter .filter-btn.active {
+  background-color: #e65c7b;
+  color: white;
+  border-color: #e65c7b;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.gallery-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.portfolio-cta {
+  background-color: #e65c7b;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.portfolio-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.portfolio-cta p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.portfolio-cta .btn {
+  background-color: white;
+  color: #e65c7b;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.portfolio-cta .btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* Медиа-запросы для портфолио */
+@media (max-width: 992px) {
+  .portfolio-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    padding: 60px 0 30px;
+  }
+  
+  .portfolio-filter .filter-btn {
+    padding: 8px 16px;
+    margin: 0 5px 10px;
+  }
+  
+  .portfolio-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+  
+  .portfolio-cta h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-filter {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .portfolio-filter .filter-btn {
+    width: 80%;
+    margin-bottom: 10px;
+  }
 }

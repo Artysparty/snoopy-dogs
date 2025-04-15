@@ -1,6 +1,133 @@
 document.addEventListener("DOMContentLoaded", () => {
   const formHandler = new FormHandler();
 
+  // Обработка видео на главном экране
+  function handleVideoFallback() {
+    const desktopVideo = document.querySelector('.video-desktop');
+    const mobileVideo = document.querySelector('.video-mobile');
+    const fallbackImage = document.querySelector('.video-fallback');
+    
+    if (!desktopVideo && !mobileVideo && !fallbackImage) return;
+    
+    // Функция для проверки доступности видеофайла
+    function checkVideoFile(videoElement, onError) {
+      if (!videoElement) return;
+      
+      const source = videoElement.querySelector('source');
+      if (!source || !source.src) {
+        console.error('Video source not found');
+        onError();
+        return;
+      }
+      
+      // Проверяем наличие файла
+      fetch(source.src)
+        .then(response => {
+          if (!response.ok) {
+            console.error(`Video file ${source.src} not found or not accessible`);
+            onError();
+          } else {
+            console.log(`Video file ${source.src} is accessible`);
+          }
+        })
+        .catch(error => {
+          console.error(`Error checking video file ${source.src}:`, error);
+          onError();
+        });
+      
+      // Также добавляем обработчики событий для видео
+      videoElement.addEventListener('error', () => {
+        console.error(`Error loading video: ${source.src}`);
+        onError();
+      });
+      
+      videoElement.addEventListener('loadeddata', () => {
+        console.log(`Video loaded successfully: ${source.src}`);
+      });
+    }
+    
+    // Определяем, какое видео использовать в зависимости от размера экрана
+    function selectAppropriateVideo() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // Скрываем оба видео по умолчанию
+      if (desktopVideo) desktopVideo.style.display = 'none';
+      if (mobileVideo) mobileVideo.style.display = 'none';
+      
+      if (isMobile) {
+        if (mobileVideo) {
+          console.log('Using mobile video');
+          mobileVideo.style.display = 'block';
+          
+          // Проверяем доступность видео
+          checkVideoFile(mobileVideo, () => {
+            mobileVideo.style.display = 'none';
+            
+            // Если мобильное видео недоступно, пробуем десктопное как запасной вариант
+            if (desktopVideo) {
+              desktopVideo.style.display = 'block';
+              checkVideoFile(desktopVideo, () => {
+                desktopVideo.style.display = 'none';
+                if (fallbackImage) fallbackImage.style.display = 'block';
+              });
+            } else if (fallbackImage) {
+              fallbackImage.style.display = 'block';
+            }
+          });
+        } else if (desktopVideo) {
+          // Если нет мобильного видео, пробуем десктопное
+          console.log('Mobile video not available, using desktop video');
+          desktopVideo.style.display = 'block';
+          
+          checkVideoFile(desktopVideo, () => {
+            desktopVideo.style.display = 'none';
+            if (fallbackImage) fallbackImage.style.display = 'block';
+          });
+        } else if (fallbackImage) {
+          fallbackImage.style.display = 'block';
+        }
+      } else {
+        // Десктопная версия
+        if (desktopVideo) {
+          console.log('Using desktop video');
+          desktopVideo.style.display = 'block';
+          
+          checkVideoFile(desktopVideo, () => {
+            desktopVideo.style.display = 'none';
+            
+            // Если десктопное видео недоступно, пробуем мобильное как запасной вариант
+            if (mobileVideo) {
+              mobileVideo.style.display = 'block';
+              checkVideoFile(mobileVideo, () => {
+                mobileVideo.style.display = 'none';
+                if (fallbackImage) fallbackImage.style.display = 'block';
+              });
+            } else if (fallbackImage) {
+              fallbackImage.style.display = 'block';
+            }
+          });
+        } else if (mobileVideo) {
+          // Если нет десктопного видео, пробуем мобильное
+          console.log('Desktop video not available, using mobile video');
+          mobileVideo.style.display = 'block';
+          
+          checkVideoFile(mobileVideo, () => {
+            mobileVideo.style.display = 'none';
+            if (fallbackImage) fallbackImage.style.display = 'block';
+          });
+        } else if (fallbackImage) {
+          fallbackImage.style.display = 'block';
+        }
+      }
+    }
+    
+    // Вызываем функцию выбора видео при загрузке
+    selectAppropriateVideo();
+    
+    // Обновляем выбор видео при изменении размера окна
+    window.addEventListener('resize', selectAppropriateVideo);
+  }
+
   // Header
   const header = document.querySelector(".header");
   const welcomeSection = document.querySelector(".welcome-section");
@@ -702,20 +829,105 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Портфолио - фильтрация галереи
+  function initPortfolioFilter() {
+    const filterButtons = document.querySelectorAll('.services-filter .filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (!filterButtons.length || !galleryItems.length) return;
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Активный класс для кнопок
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filterValue = button.getAttribute('data-filter');
+        
+        // Фильтрация элементов
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.classList.add('active');
+            }, 50);
+          } else {
+            item.classList.remove('active');
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Анимация при наведении
+    galleryItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('hover');
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('hover');
+      });
+    });
+
+    // Показать все элементы при загрузке
+    galleryItems.forEach(item => {
+      item.classList.add('active');
+      item.style.display = 'block';
+    });
+  }
+
+  // Анимация падающих иконок
+  function animateFallingIcons() {
+    const iconContainers = document.querySelectorAll('.falling-icons-container');
+    
+    if (!iconContainers.length) return;
+    
+    iconContainers.forEach(container => {
+      const icons = container.querySelectorAll('.falling-icon');
+      
+      icons.forEach(icon => {
+        // Случайное начальное положение
+        const startX = Math.random() * 100;
+        const startDelay = Math.random() * 5;
+        
+        // Случайная скорость падения
+        const duration = 5 + Math.random() * 10;
+        
+        // Случайное вращение
+        const rotation = Math.random() * 360;
+        const rotationSpeed = Math.random() > 0.5 ? 1 : -1;
+        
+        // Применяем стили
+        icon.style.left = `${startX}%`;
+        icon.style.animationDelay = `${startDelay}s`;
+        icon.style.animationDuration = `${duration}s`;
+        icon.style.transform = `rotate(${rotation}deg)`;
+        icon.style.setProperty('--rotation-direction', rotationSpeed);
+      });
+    });
+  }
+
   // Инициализация всех функций
   initMobileMenu();
   highlightActiveMenuItem();
   initSmoothScroll();
   initScrollAnimations();
+  handleVideoFallback();
   initYandexMap();
   initWelcomeIcons();
   initServices();
+  initPortfolioFilter();
+  animateFallingIcons();
 });
 
 class FormHandler {
   constructor() {
     this.rateLimiter = new RateLimiter(TELEGRAM_CONFIG.RATE_LIMIT_MS);
     this.initForms();
+    this.initValidation();
   }
 
   initForms() {
@@ -736,7 +948,164 @@ class FormHandler {
     }
   }
 
+  initValidation() {
+    // Инициализация валидации для всех форм
+    const forms = document.querySelectorAll('.modal-form, .contact-form');
+    
+    forms.forEach(form => {
+      const nameInput = form.querySelector('input[name="name"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const submitButton = form.querySelector('button[type="submit"]');
+      
+      // Добавление индикаторов обязательных полей
+      if (nameInput) {
+        // Добавляем звездочку после placeholder
+        nameInput.placeholder = nameInput.placeholder + ' *';
+      }
+      
+      if (phoneInput) {
+        // Добавляем звездочку после placeholder
+        phoneInput.placeholder = phoneInput.placeholder + ' *';
+        
+        // Маска для телефона
+        this.initPhoneMask(phoneInput);
+        
+        // Валидация при вводе
+        phoneInput.addEventListener('input', () => {
+          this.validateForm(form);
+        });
+      }
+      
+      // Валидация имени
+      if (nameInput) {
+        nameInput.addEventListener('input', () => {
+          this.validateForm(form);
+        });
+      }
+      
+      // Изначальная блокировка кнопки
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+      
+      // Первичная валидация
+      this.validateForm(form);
+    });
+  }
+  
+  initPhoneMask(input) {
+    let prevValue = '';
+    
+    input.addEventListener('input', (e) => {
+      // Сохраняем текущую позицию курсора
+      const cursorPos = input.selectionStart;
+      // Получаем только цифры из введенного значения
+      let value = input.value.replace(/\D/g, '');
+      
+      // Если первая цифра 7, удаляем её, т.к. код +7 уже добавляется маской
+      if (value.length > 0 && value[0] === '7') {
+        value = value.substring(1);
+      }
+      
+      let formattedValue = '';
+      
+      if (value.length === 0) {
+        formattedValue = '';
+      } else if (value.length <= 3) {
+        formattedValue = `+7 (${value}`;
+      } else if (value.length <= 6) {
+        formattedValue = `+7 (${value.substring(0, 3)}) ${value.substring(3)}`;
+      } else if (value.length <= 8) {
+        formattedValue = `+7 (${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+      } else if (value.length <= 10) {
+        formattedValue = `+7 (${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6, 8)}-${value.substring(8)}`;
+      } else {
+        // Ограничиваем длину до 10 цифр (не считая кода страны)
+        formattedValue = `+7 (${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6, 8)}-${value.substring(8, 10)}`;
+      }
+      
+      // Устанавливаем отформатированное значение
+      if (formattedValue !== input.value) {
+        input.value = formattedValue;
+        
+        // Корректируем позицию курсора
+        const newCursorPos = cursorPos + (formattedValue.length - prevValue.length);
+        if (newCursorPos >= 0) {
+          input.setSelectionRange(newCursorPos, newCursorPos);
+        }
+      }
+      
+      prevValue = formattedValue;
+    });
+    
+    // Обрабатываем случай когда пользователь вставляет номер
+    input.addEventListener('paste', (e) => {
+      setTimeout(() => {
+        input.dispatchEvent(new Event('input'));
+      }, 0);
+    });
+    
+    // Проверяем внесенные ранее данные
+    input.dispatchEvent(new Event('input'));
+  }
+  
+  validateForm(form) {
+    const nameInput = form.querySelector('input[name="name"]');
+    const phoneInput = form.querySelector('input[name="phone"]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    let isValid = true;
+    
+    // Валидация имени
+    if (nameInput) {
+      const nameValue = nameInput.value.trim();
+      const namePattern = /^[А-ЯЁа-яёA-Za-z\s-]{2,50}$/;
+      
+      // Выделяем только если пользователь уже взаимодействовал с полем и ввел некорректные данные
+      if (nameValue && !namePattern.test(nameValue)) {
+        nameInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        nameInput.classList.remove('invalid');
+        // Проверяем заполненность поля для активации кнопки
+        if (!nameValue) {
+          isValid = false;
+        }
+      }
+    }
+    
+    // Валидация телефона
+    if (phoneInput) {
+      const phoneValue = phoneInput.value.replace(/\D/g, '');
+      
+      // Выделяем только если пользователь уже взаимодействовал с полем и ввел некорректные данные
+      if (phoneValue && phoneValue.length < 11) {
+        phoneInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        phoneInput.classList.remove('invalid');
+        // Проверяем заполненность поля для активации кнопки
+        if (!phoneValue) {
+          isValid = false;
+        }
+      }
+    }
+    
+    // Управление кнопкой
+    if (submitButton) {
+      submitButton.disabled = !isValid;
+    }
+    
+    return isValid;
+  }
+
   async handleFormSubmit(form, type) {
+    // Дополнительная проверка валидности перед отправкой
+    if (!this.validateForm(form)) {
+      this.showNotification("Пожалуйста, заполните все обязательные поля", "error");
+      return;
+    }
+    
     const submitButton = form.querySelector('button[type="submit"]');
     const formSuccess = form.closest(".modal-content")
       ? form.closest(".modal-content").querySelector(".form-success")
@@ -901,3 +1270,71 @@ const TELEGRAM_CONFIG = {
   RATE_LIMIT_MS: 30000,
   MAX_MESSAGES_PER_SESSION: 5,
 };
+
+// Обновляем стили для валидации
+const validationStyles = document.createElement('style');
+validationStyles.textContent = `
+  .form-group input.invalid,
+  .form-group textarea.invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+  }
+  
+  .form-group input.invalid:focus,
+  .form-group textarea.invalid:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+  }
+  
+  .form-group input::placeholder {
+    color: #999;
+  }
+  
+  .form-group input:focus::placeholder {
+    opacity: 0.5;
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: #cccccc;
+    color: #666666;
+    box-shadow: none;
+  }
+
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+  }
+
+  .notification.error {
+    background-color: #e74c3c;
+  }
+
+  .notification i {
+    font-size: 1.5rem;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;
+document.head.appendChild(validationStyles);
